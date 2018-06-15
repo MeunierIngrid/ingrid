@@ -1,0 +1,9 @@
+
+    <% if object %>
+      <%= link_to object.url, target: "_blank" do %>
+        <h5 class="pt-3 align-items-start"><%= object.title %></h5>
+      <% end %>
+    <% else %>
+      <h3>Informations non disponibles</h3>
+    <% end %>
+    <%= link_to "Détails", url %>
