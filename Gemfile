@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'metainspector'
+gem 'activeadmin'
+gem 'ckeditor'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
