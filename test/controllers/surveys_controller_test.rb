@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class QuizzesControllerTest < ActionDispatch::IntegrationTest
+class SurveysControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get quizzes_new_url
+    get surveys_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get quizzes_create_url
+    get surveys_create_url
     assert_response :success
   end
 
   test "should get show" do
-    get quizzes_show_url
+    get surveys_show_url
     assert_response :success
   end
 
