@@ -3,6 +3,7 @@ class Book < ApplicationRecord
   validates :token, uniqueness: true
   validates :title, presence: true
   validates :title, uniqueness: true
+  has_one_attached :cover
 
   def metas
     MetaInspector.new("https://payhip.com/b/#{token}")
