@@ -22,6 +22,9 @@ gem 'activeadmin'
 gem 'ckeditor'
 gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
+gem 'money-rails'
+gem 'stripe'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
