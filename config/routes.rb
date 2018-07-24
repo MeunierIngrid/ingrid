@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'books/index'
@@ -11,5 +10,7 @@ Rails.application.routes.draw do
   get 'quizz-informations', to: 'pages#survey', as: 'quizz_informations'
 
   resources :surveys, only: [:new, :create, :show]
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index, :show] do
+    resources :orders, only: [:show, :create], shallow: true
+  end
 end

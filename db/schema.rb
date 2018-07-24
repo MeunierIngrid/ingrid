@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_221808) do
+ActiveRecord::Schema.define(version: 2018_06_17_233401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,9 +78,10 @@ ActiveRecord::Schema.define(version: 2018_06_15_221808) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "choices", force: :cascade do |t|
@@ -90,6 +91,17 @@ ActiveRecord::Schema.define(version: 2018_06_15_221808) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_choices_on_question_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "book_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_orders_on_book_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -124,6 +136,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_221808) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
+    t.string "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -131,5 +144,7 @@ ActiveRecord::Schema.define(version: 2018_06_15_221808) do
   add_foreign_key "anwsers", "choices"
   add_foreign_key "anwsers", "users"
   add_foreign_key "choices", "questions"
+  add_foreign_key "orders", "books"
+  add_foreign_key "orders", "users"
   add_foreign_key "questions", "surveys"
 end
