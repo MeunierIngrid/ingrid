@@ -2,8 +2,6 @@
 <%#= link_to "La liste de mes livre", books_path %>
 
 
-
-
 <div class="banner d-flex align-items-center flex-column">
   <%= image_tag "logo.png" %>
   <p class="pushline">Be yourself : Il n’est jamais trop tard pour être soi même</p>
@@ -66,6 +64,11 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/transition", image_path: "transitions/meeting.jpg",
+                                title: "Suis-je concerné ?",
+                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+
 
 <div class="wrapper text-center">
   <div class="container">
@@ -157,6 +160,11 @@
     </div>
   </div>
 </div>
+
+<%= render "shared/transition", image_path: "transitions/book.jpg",
+                                title: "Je souhaite comprendre",
+                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+
 
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
