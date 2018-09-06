@@ -1,608 +1,201 @@
 <%#= link_to "avoir des infos sur test", quizz_informations_path %>
 <%#= link_to "La liste de mes livre", books_path %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ingrid Meunier</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600|Patrick+Hand+SC" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <style>
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Patrick Hand SC', cursive;
-      color: #BE1621;
-    }
-
-    body {
-      font-family: 'Josefin Slab', serif;
-      color: #1C1C1B;
-      font-size: 20px;
-    }
-
-    .bg-marron-dark {
-      background-color: #CABB9F;
-    }
-
-    .bg-marron-light {
-      background-color: #FFFBF3;
-    }
-
-    .bg-blue {
-      background-color: #2F7DA3;
-    }
-
-    .bg-orange {
-      background-color: #E84E1B;
-    }
-
-    .bg-green {
-     background-color: #BDB734;
-    }
-
-    /*.height-55vh {
-      height: calc(55vh - 70px);
-    }*/
-
-    .btn-item {
-      color: white;
-      border-radius: 27px;
-    }
-
-    .btn-item:hover {
-      opacity: 0.8;
-    }
-
-    .btn-item > .title {
-      flex: 1 0 auto;
-    }
-
-    .btn-item > i {
-      font-size: 28px;
-      border: 4px solid white;
-      border-radius: 27px;
-      width: 55px;
-      height: 55px;
-    }
-
-    a:hover {
-      color: white;
-      text-decoration: none;
-    }
-
-    .width-100 {
-      width: 100%;
-    }
-
-    .qote-content {
-      position: relative;
-    }
-
-    .qote-i {
-      position: absolute;
-      top: -45px;
-      left: -90px;
-      font-size: 40px;
-      border-radius: 50%;
-      background-color: #CABB9F;
-      color: white;
-      height: 80px;
-      width: 80px;
-    }
-
-    .qote-content > hr {
-      color: #88744F;
-    }
-
-    .qote-content > h3 {
-      color: #AA9774;
-    }
-
-    .banner {
-      background: -moz-linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* ff3.6+ */
-      background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(240,230,210,1)), color-stop(100%, rgba(202,187,159,1))); /* safari4+,chrome */
-      background: -webkit-linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* safari5.1+,chrome10+ */
-      background: -o-linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* opera 11.10+ */
-      background: -ms-linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* ie10+ */
-      background: linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* w3c */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CABB9F', endColorstr='#F0E6D2',GradientType=1 ); /* ie6-9 */
-      height: calc(45vh + 70px);
-      padding-top: 70px;
-    }
-
-    .banner > img {
-      max-width: 70%;
-    }
-
-    .banner > .pushline {
-      font-weight: bold;
-      font-size: 28px;
-    }
-
-    /*-=-=-=-=-=-=-=-=-=-*/
-    /* Column Grids */
-    /*-=-=-=-=-=-=-=-=-= */
-
-    .col_half { width: 49%; }
-    .col_third { width: 32%; }
-    .col_fourth { width: 23.5%; }
-    .col_fifth { width: 18.4%; }
-    .col_sixth { width: 15%; }
-    .col_three_fourth { width: 74.5%;}
-    .col_twothird{ width: 66%;}
-    .col_half,
-    .col_third,
-    .col_twothird,
-    .col_fourth,
-    .col_three_fourth,
-    .col_fifth{
-      position: relative;
-      display:inline;
-      display: inline-block;
-      float: left;
-      margin-right: 2%;
-      margin-bottom: 20px;
-    }
-    .end { margin-right: 0 !important; }
-
-    /*-=-=-=-=-=-=-=-=-=-=- */
-    /* Flip Panel */
-    /*-=-=-=-=-=-=-=-=-=-=- */
-
-    .wrapper {
-      border-bottom: 4px solid #CABB9F;
-      padding: 40px 0px;
-    }
-
-    .wrapper-grid{
-      width: 90%;
-      margin: 0 auto;
-      hoverflow: hidden;
-      height: 300px;
-    }
-
-    .panel {
-      margin: 0 auto;
-      height: 220px;
-      position: relative;
-      -webkit-perspective: 600px;
-      -moz-perspective: 600px;
-    }
-
-    .panel .front,
-    .panel .back {
-      text-align: center;
-    }
-
-    .panel .front {
-      width: 100%;
-      height: inherit;
-      position: absolute;
-      top: 0;
-      z-index: 900;
-      text-align: center;
-      -webkit-transform: rotateX(0deg) rotateY(0deg);
-         -moz-transform: rotateX(0deg) rotateY(0deg);
-      -webkit-transform-style: preserve-3d;
-         -moz-transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-         -moz-backface-visibility: hidden;
-      -webkit-transition: all .4s ease-in-out;
-         -moz-transition: all .4s ease-in-out;
-        -ms-transition: all .4s ease-in-out;
-         -o-transition: all .4s ease-in-out;
-          transition: all .4s ease-in-out;
-    }
-
-    .panel .back {
-      width: 100%;
-      height: inherit;
-      position: absolute;
-      top: 0;
-      z-index: 1000;
-      -webkit-transform: rotateY(-180deg);
-         -moz-transform: rotateY(-180deg);
-      -webkit-transform-style: preserve-3d;
-         -moz-transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-         -moz-backface-visibility: hidden;
-      -webkit-transition: all .4s ease-in-out;
-         -moz-transition: all .4s ease-in-out;
-        -ms-transition: all .4s ease-in-out;
-         -o-transition: all .4s ease-in-out;
-          transition: all .4s ease-in-out;
-    }
-    .panel.flip .front {
-      z-index: 900;
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-    }
-    .panel.flip .back {
-      z-index: 1000;
-      -webkit-transform: rotateX(0deg) rotateY(0deg);
-      -moz-transform: rotateX(0deg) rotateY(0deg);
-    }
-    .box1{
-      width: 100%;
-      height: 220px;
-      margin: 0 auto;
-      padding: 20px;
-      border-radius: 3px;
-      -moz-border-radius: 3px;
-      -webkit-border-radius: 3px;
-    }
-
-    .box1 > img {
-      width: 100%;
-    }
-
-    .box2{
-      background-color: white;
-      width: 100%;
-      height: 220px;
-      margin: 0 auto;
-      padding: 20px;
-      box-shadow: 2px 2px 20px grey;
-      border-radius: 3px;
-      -moz-border-radius: 3px;
-      -webkit-border-radius: 3px;
-    }
-
-    .target {
-      width: 100%;
-      margin-top: 40px;
-    }
 
 
 
-    /* Main navbar */
-    .navbar-wagon {
-      box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-      background: white;
-      transition: all 0.3s ease;
-      height: 70px;
-      padding: 0px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: fixed;
-      z-index: 10;
-      width: 100%;
-    }
 
-    /* Logo */
-    .navbar-wagon-brand img {
-      height: 50px;
-    }
+<div class="banner d-flex align-items-center flex-column">
+  <%= image_tag "logo.png" %>
+  <p class="pushline">Be yourself : Il n’est jamais trop tard pour être soi même</p>
 
-    /* User Avatar */
-    .navbar-wagon .avatar {
-      height: 35px;
-      width: 35px;
-      border-radius: 50%;
-    }
+</div>
 
-    /* Right section */
-    .navbar-wagon-right {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Basic navbar item */
-    .navbar-wagon-item {
-      cursor: pointer;
-      padding: 0 20px;
-    }
-
-    /* Navbar link */
-    .navbar-wagon-link {
-      color: #616668;
-      font-size: 14px;
-    }
-    .navbar-wagon-link:hover {
-      color: #da552f;
-      text-decoration: none;
-    }
-
-    /* Dropdown menu */
-    .navbar-wagon-dropdown-menu {
-      margin-top: 15px;
-      box-shadow: 1px 1px 4px #E6E6E6;
-      border-color: #E6E6E6;
-    }
-    .navbar-wagon-dropdown-menu li > a {
-      transition: color 0.3s ease;
-      font-weight: lighter !important;
-      color: #999999 !important;
-      font-size: 15px !important;
-      line-height: 22px !important;
-      padding: 10px 20px;
-    }
-    .navbar-wagon-dropdown-menu li > a:hover {
-      background: transparent !important;
-      color: black !important;
-    }
-    .navbar-wagon-dropdown-menu:before {
-      content: ' ';
-      height: 10px;
-      width: 10px;
-      position: absolute;
-      right: 10px;
-      top: -6px;
-      background-color: white;
-      transform: rotate(45deg);
-      border-left: 1px solid #E6E6E6;
-      border-top: 1px solid #E6E6E6;
-    }
-
-    .footer {
-      background: #88744F;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100px;
-      padding: 0px 50px;
-      color: white;
-    }
-    .footer-links {
-      display: flex;
-      align-items: center;
-    }
-    .footer-links a {
-      color: white;
-      opacity: 0.8;
-      text-decoration: none;
-      font-size: 24px;
-      padding: 0px 10px;
-    }
-    .footer-links a:hover {
-      opacity: 0.3;
-    }
-  </style>
-
-</head>
-<body>
-
-  <div class="navbar-wagon">
-    <!-- Logo -->
-    <a href="/" class="navbar-wagon-brand">
-      <%= image_tag "logo.png" %>
-    </a>
-
-    <!-- Right Navigation -->
-    <div class="navbar-wagon-right d-none d-md-block">
-      <a href="#demarche" class="navbar-wagon-item navbar-wagon-link">La démarche</a>
-      <a href="#accompagnement" class="navbar-wagon-item navbar-wagon-link">L'accompagnement</a>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Le questionnaire</a>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Les e-books</a>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-    </div>
-
-    <!-- Dropdown appearing on mobile only -->
-    <div class="navbar-wagon-item d-block d-md-none">
-      <div class="dropdown">
-        <i class="fa fa-bars" data-toggle="dropdown"></i>
-        <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <a class="dropdown-item" href="#demarche">La démarche</a>
-          <a class="dropdown-item" href="#accompagnement">L'accompagnement</a>
-          <a class="dropdown-item" href="#">Le questionnaire</a>
-          <a class="dropdown-item" href="#">e-books</a>
-          <a class="dropdown-item" href="#">Contact</a>
-        </div>
-      </div>
+<div class="wrapper bg-marron-light">
+  <div class="container">
+    <div class="row text-center p-5">
+      <p>Au travers de mon site, je tente d’offrir de façon la plus accessible, exhaustive et synthétique possible, les réponses aux questions inhérentes à la découverte de sa douance pour devenir un <b>"surdoué décomplexé"</b></p>
     </div>
   </div>
-
-  <div class="banner d-flex align-items-center flex-column">
-    <%= image_tag "logo.png" %>
-    <p class="pushline">Be yourself : Il n’est jamais trop tard pour être soi même</p>
-
-  </div>
-
-  <div class="wrapper bg-marron-light">
-    <div class="container">
-      <div class="row text-center p-5">
-        <p>Au travers de mon site, je tente d’offrir de façon la plus accessible, exhaustive et synthétique possible, les réponses aux questions inhérentes à la découverte de sa douance pour devenir un <b>"surdoué décomplexé"</b></p>
+  <div class="wrapper-grid">
+    <div class="col_third">
+      <div class="hover panel d-flex justify-content-center">
+        <div class="front">
+          <div class="box1 d-flex align-items-end">
+            <%= image_tag "pictos1.png" %>
+          </div>
+        </div>
+        <div class="back">
+          <div class="box2">
+            <h2>Titre</h2>
+            <p>Back Side</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="wrapper-grid">
-      <div class="col_third">
-        <div class="hover panel d-flex justify-content-center">
-          <div class="front">
-            <div class="box1 d-flex align-items-end">
-              <%= image_tag "pictos1.png" %>
-            </div>
+
+    <div class="col_third">
+      <div class="hover panel d-flex justify-content-center">
+        <div class="front">
+          <div class="box1 d-flex align-items-end">
+            <%= image_tag "pictos2.png" %>
           </div>
-          <div class="back">
-            <div class="box2">
-              <h2>Titre</h2>
-              <p>Back Side</p>
-            </div>
+        </div>
+        <div class="back">
+          <div class="box2">
+            <h2>Titre</h2>
+            <p>Back Side</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col_third">
-        <div class="hover panel d-flex justify-content-center">
-          <div class="front">
-            <div class="box1 d-flex align-items-end">
-              <%= image_tag "pictos2.png" %>
-            </div>
-          </div>
-          <div class="back">
-            <div class="box2">
-              <h2>Titre</h2>
-              <p>Back Side</p>
-            </div>
+    <div class="col_third end">
+      <div class="hover panel d-flex justify-content-center">
+        <div class="front">
+          <div class="box1 d-flex align-items-end">
+            <%= image_tag "pictos3.png" %>
           </div>
         </div>
-      </div>
-
-      <div class="col_third end">
-        <div class="hover panel d-flex justify-content-center">
-          <div class="front">
-            <div class="box1 d-flex align-items-end">
-              <%= image_tag "pictos3.png" %>
-            </div>
-          </div>
-          <div class="back">
-            <div class="box2">
-              <h2>Titre</h2>
-              <p>Back Side</p>
-            </div>
+        <div class="back">
+          <div class="box2">
+            <h2>Titre</h2>
+            <p>Back Side</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="wrapper text-center">
-    <div class="container">
-      <div class="content p-5">
-        <h2>La démarche</h2>
-        <p>Quand on se pense ou se découvre <b>surdoué</b>, on a besoin de savoir <b>VITE</b> ce qu’il en est. Se déclenche un fort sentiment d’empressement <b>à comprendre, savoir et solutionner</b>. Je vous mets à dispositions <b>3 manières possibles</b> d’y arriver, délivrant <b>3 types de services.</b></p>
+<div class="wrapper text-center">
+  <div class="container">
+    <div class="content p-5">
+      <h2>La démarche</h2>
+      <p>Quand on se pense ou se découvre <b>surdoué</b>, on a besoin de savoir <b>VITE</b> ce qu’il en est. Se déclenche un fort sentiment d’empressement <b>à comprendre, savoir et solutionner</b>. Je vous mets à dispositions <b>3 manières possibles</b> d’y arriver, délivrant <b>3 types de services.</b></p>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <h2>Comment ?</h2>
+        <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+          <i class="d-flex align-items-center justify-content-center fas fa-question"></i>
+          <div class="title d-flex align-items-center justify-content-center"><div>Le site et le questionnaire</div></div>
+        </a>
+
+        <div class="collapse" id="collapse1">
+          <div class="card card-body">
+            Un QUESTIONNAIRE qui permet d’avoir une premiere approche personnelle de son éventuel surdon ainsi que des EXPLICATIONS.
+          </div>
+        </div>
+
+        <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+          <i class="d-flex align-items-center justify-content-center fas fa-book"></i>
+          <div class="title d-flex align-items-center justify-content-center"><div>Les ebooks</div></div>
+        </a>
+
+        <div class="collapse" id="collapse2">
+          <div class="card card-body">
+            Des E-BOOKS qui reprennent tous les éléments “essentiels” que je fournis lors de mes consultations.
+          </div>
+        </div>
+
+        <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
+          <i class="d-flex align-items-center justify-content-center fas fa-video"></i>
+          <div class="title d-flex align-items-center justify-content-center"><div>Les visiodiscutions</div></div>
+        </a>
+
+        <div class="collapse" id="collapse3">
+          <div class="card card-body">
+            Des VISIODISCUTIONS pour me parler qui répondent aux questions de façon personnalisée.
+          </div>
+        </div>
+
       </div>
-      <div class="row">
-        <div class="col-md-5">
-          <h2>Comment ?</h2>
-          <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
-            <i class="d-flex align-items-center justify-content-center fas fa-question"></i>
-            <div class="title d-flex align-items-center justify-content-center"><div>Le site et le questionnaire</div></div>
-          </a>
-
-          <div class="collapse" id="collapse1">
-            <div class="card card-body">
-              Un QUESTIONNAIRE qui permet d’avoir une premiere approche personnelle de son éventuel surdon ainsi que des EXPLICATIONS.
-            </div>
+      <div class="col-md-2">
+        <%= image_tag "target.png", class: "target" %>
+      </div>
+      <div class="col-md-5">
+        <h2>Quoi ?</h2>
+        <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">
+          <div class="title d-flex align-items-center justify-content-center">
+            <div>Informations sur les surdoués</div>
           </div>
+          <i class="d-flex align-items-center justify-content-center fas fa-info"></i>
+        </a>
 
-          <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
-            <i class="d-flex align-items-center justify-content-center fas fa-book"></i>
-            <div class="title d-flex align-items-center justify-content-center"><div>Les ebooks</div></div>
-          </a>
-
-          <div class="collapse" id="collapse2">
-            <div class="card card-body">
-              Des E-BOOKS qui reprennent tous les éléments “essentiels” que je fournis lors de mes consultations.
-            </div>
+        <div class="collapse" id="collapse4">
+          <div class="card card-body">
+            Des INFORMATIONS sur le fonctionnement des surdoués, des normaux pensants et du monde.
           </div>
-
-          <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
-            <i class="d-flex align-items-center justify-content-center fas fa-video"></i>
-            <div class="title d-flex align-items-center justify-content-center"><div>Les visiodiscutions</div></div>
-          </a>
-
-          <div class="collapse" id="collapse3">
-            <div class="card card-body">
-              Des VISIODISCUTIONS pour me parler qui répondent aux questions de façon personnalisée.
-            </div>
-          </div>
-
         </div>
-        <div class="col-md-2">
-          <%= image_tag "target.png", class: "target" %>
+
+        <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapse5">
+          <div class="title d-flex align-items-center justify-content-center">
+            <div>Solutions, trucs et astuces</div>
+          </div>
+          <i class="d-flex align-items-center justify-content-center far fa-lightbulb"></i>
+        </a>
+
+        <div class="collapse" id="collapse5">
+          <div class="card card-body">
+            Des SOLUTIONS, des TRUCS ET ASTUCES, du concret à mettre en place.
+          </div>
         </div>
-        <div class="col-md-5">
-          <h2>Quoi ?</h2>
-          <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">
-            <div class="title d-flex align-items-center justify-content-center">
-              <div>Informations sur les surdoués</div>
-            </div>
-            <i class="d-flex align-items-center justify-content-center fas fa-info"></i>
-          </a>
 
-          <div class="collapse" id="collapse4">
-            <div class="card card-body">
-              Des INFORMATIONS sur le fonctionnement des surdoués, des normaux pensants et du monde.
-            </div>
+        <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapse6">
+          <div class="title d-flex align-items-center justify-content-center">
+            <div>Une écoute éclairée</div>
           </div>
+          <i class="d-flex align-items-center justify-content-center far fa-comments"></i>
+        </a>
 
-          <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapse5">
-            <div class="title d-flex align-items-center justify-content-center">
-              <div>Solutions, trucs et astuces</div>
-            </div>
-            <i class="d-flex align-items-center justify-content-center far fa-lightbulb"></i>
-          </a>
-
-          <div class="collapse" id="collapse5">
-            <div class="card card-body">
-              Des SOLUTIONS, des TRUCS ET ASTUCES, du concret à mettre en place.
-            </div>
-          </div>
-
-          <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapse6">
-            <div class="title d-flex align-items-center justify-content-center">
-              <div>Une écoute éclairée</div>
-            </div>
-            <i class="d-flex align-items-center justify-content-center far fa-comments"></i>
-          </a>
-
-          <div class="collapse" id="collapse6">
-            <div class="card card-body">
-              Une ECOUTE éclairée et professionnelle.
-            </div>
+        <div class="collapse" id="collapse6">
+          <div class="card card-body">
+            Une ECOUTE éclairée et professionnelle.
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="wrapper bg-marron-light text-center">
-    <div class="container">
-      <div class="content p-5">
-        <h2>L’accompagnement</h2>
-        <p><b>Etre surdoué n’est ni une névrose, ni une pathologie. Il n’y a donc pas lieu d’engager une thérapie pour cela.</b></p>
+<div class="wrapper bg-marron-light text-center">
+  <div class="container">
+    <div class="content p-5">
+      <h2>L’accompagnement</h2>
+      <p><b>Etre surdoué n’est ni une névrose, ni une pathologie. Il n’y a donc pas lieu d’engager une thérapie pour cela.</b></p>
 
-        <%= image_tag "nevroses.png", class: "width-100" %>
+      <%= image_tag "nevroses.png", class: "width-100" %>
 
-        <p>Le haut potentiel n’est qu’un <b>mode de fonctionnement neuronale atypique</b> qu’il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu’un gadget High Tech que l’on apprend à manipuler et à optimiser grâce à la notice.</p>
+      <p>Le haut potentiel n’est qu’un <b>mode de fonctionnement neuronale atypique</b> qu’il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu’un gadget High Tech que l’on apprend à manipuler et à optimiser grâce à la notice.</p>
 
-        <p>
-          J’ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu’un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues…
-        </p>
+      <p>
+        J’ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu’un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues…
+      </p>
+    </div>
+
+    <div class="qote d-flex justify-content-center">
+      <div class="qote-content">
+        <i class="d-flex align-items-center justify-content-center qote-i fas fa-quote-right"></i>
+        <p><i><b>On ne devient pas normal impunément</b></i></p>
+        <hr>
+        <hr>
+        <h3>Le philosophe Emile Cioran</h3>
       </div>
-
-      <div class="qote d-flex justify-content-center">
-        <div class="qote-content">
-          <i class="d-flex align-items-center justify-content-center qote-i fas fa-quote-right"></i>
-          <p><i><b>On ne devient pas normal impunément</b></i></p>
-          <hr>
-          <hr>
-          <h3>Le philosophe Emile Cioran</h3>
-        </div>
-      </div>
-
     </div>
+
   </div>
+</div>
 
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright d-none d-md-block">
-      Ingrid Meunier
-    </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-  <script>
-    $(document).ready(function(){
-      $('.hover').hover(function(){
-        $(this).addClass('flip');
-      },function(){
-        $(this).removeClass('flip');
-      });
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script>
+  $(document).ready(function(){
+    $('.hover').hover(function(){
+      $(this).addClass('flip');
+    },function(){
+      $(this).removeClass('flip');
     });
-  </script>
-</body>
-</html>
+  });
+</script>
+
