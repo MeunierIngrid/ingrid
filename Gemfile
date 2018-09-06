@@ -28,6 +28,7 @@ gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'rails-erd'
 end
 
 group :development, :test do
