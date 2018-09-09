@@ -25,16 +25,8 @@
   border-radius: 50%;
 }
 
-/* Right section */
-.navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /* Basic navbar item */
 .navbar-wagon-item {
-  cursor: pointer;
   padding: 0 20px;
 }
 
@@ -42,6 +34,7 @@
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
+  cursor: pointer;
 }
 .navbar-wagon-link:hover {
   color: #da552f;
