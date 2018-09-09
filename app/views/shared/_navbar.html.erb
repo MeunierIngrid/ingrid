@@ -12,7 +12,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <%= link_to "Le questionnaire", quizz_informations_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Les e-books", books_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Qui suis-je ?</a>
+      <%= link_to "Qui suis-je ?", biography_path, class: "navbar-wagon-item navbar-wagon-link"  %>
       <a href="#" class="navbar-wagon-item navbar-wagon-link">Contact</a>
       <a href="#" class="navbar-wagon-item navbar-wagon-link">Les ressources</a>
       <% if current_user %>
@@ -33,7 +33,7 @@
       <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <%= link_to "Le questionnaire", quizz_informations_path, class: "dropdown-item" %>
         <%= link_to "Les e-books", books_path, class: "dropdown-item" %>
-        <a class="dropdown-item" href="#"></a>
+      <%= link_to "Qui suis-je ?", biography_path, class: "dropdown-item"  %>
         <a class="dropdown-item" href="#">Contact</a>
         <a class="dropdown-item" href="#">Les ressources</a>
         <% if current_user %>
