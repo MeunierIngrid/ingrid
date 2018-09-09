@@ -4,14 +4,21 @@
 
 <div class="banner d-flex align-items-center flex-column">
   <%= image_tag "logo.png" %>
-  <p class="pushline">Be yourself : Il n’est jamais trop tard pour être soi même</p>
+  <p class="pushline">Be yourself : Il n'est jamais trop tard pour être soi même</p>
 
 </div>
 
 <div class="wrapper bg-marron-light">
   <div class="container">
     <div class="row text-center p-5">
-      <p>Au travers de mon site, je tente d’offrir de façon la plus accessible, exhaustive et synthétique possible, les réponses aux questions inhérentes à la découverte de sa douance pour devenir un <b>"surdoué décomplexé"</b></p>
+      <p>
+        Au travers de mon site, je tente d'offrir de façon exhaustive et synthétique les réponses aux questions inhérentes à la découverte de la <b>douance adulte</b> pour devenir un <b>"surdoué décomplexé"</b>.
+        <br>
+        Pourquoi décomplexé? Car <b>être surdoué n'est ni honteux, ni une insulte, ni de l'orgueil mal placé</b>. Etre surdoué est une <b>chance</b> quand on sait l'exploiter.
+      </p>
+      <p>
+        Forte de mes <b>14 ans d'expérience dans l'accompagnement du haut potentiel</b> (bénévole et professionnelle) je souhaite mettre <b>mon expertise</b> à votre service.
+      </p>
     </div>
   </div>
   <div class="wrapper-grid">
@@ -74,7 +81,12 @@
   <div class="container">
     <div class="content p-5">
       <h2>La démarche</h2>
-      <p>Quand on se pense ou se découvre <b>surdoué</b>, on a besoin de savoir <b>VITE</b> ce qu’il en est. Se déclenche un fort sentiment d’empressement <b>à comprendre, savoir et solutionner</b>. Je vous mets à dispositions <b>3 manières possibles</b> d’y arriver, délivrant <b>3 types de services.</b></p>
+      <p>
+        Quand on se pense ou se découvre surdoué, on a besoin de savoir <b>rapidement</b> ce qu'il en est. Se déclenche un fort sentiment d'empressement à comprendre, savoir et solutionner.
+      </p>
+      <p>
+        Je vous mets à dispositions <b>3 manières possibles</b> d'y arriver, délivrant <b>3 types de services</b>.
+      </p>
     </div>
     <div class="row">
       <div class="col-md-5">
@@ -86,7 +98,7 @@
 
         <div class="collapse" id="collapse1">
           <div class="card card-body">
-            Un QUESTIONNAIRE qui permet d’avoir une premiere approche personnelle de son éventuel surdon ainsi que des EXPLICATIONS.
+            Un QUESTIONNAIRE qui permet d'avoir une premiere approche personnelle de son éventuel surdon ainsi que des EXPLICATIONS.
           </div>
         </div>
 
@@ -97,7 +109,7 @@
 
         <div class="collapse" id="collapse2">
           <div class="card card-body">
-            Des E-BOOKS qui reprennent tous les éléments “essentiels” que je fournis lors de mes consultations.
+            Des E-BOOKS qui reprennent tous les éléments "essentiels" que je fournis lors de mes consultations.
           </div>
         </div>
 
@@ -169,19 +181,21 @@
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
     <div class="content p-5">
-      <h2>L’accompagnement</h2>
-      <p><b>Etre surdoué n’est ni une névrose, ni une pathologie. Il n’y a donc pas lieu d’engager une thérapie pour cela.</b></p>
+      <h2>L'accompagnement</h2>
+      <p><b>Etre surdoué n'est ni une névrose, ni une pathologie. Il n'y a donc pas lieu d'engager une thérapie pour cela.</b></p>
 
-      <%= image_tag "nevroses.png", class: "width-100" %>
+      <div class="d-none d-md-block">
+        <%= image_tag "nevroses.png", class: "width-100" %>
+      </div>
 
-      <p>Le haut potentiel n’est qu’un <b>mode de fonctionnement neuronale atypique</b> qu’il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu’un gadget High Tech que l’on apprend à manipuler et à optimiser grâce à la notice.</p>
+      <p>Le haut potentiel n'est qu'un <b>mode de fonctionnement neuronale atypique</b> qu'il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu'un gadget High Tech que l'on apprend à manipuler et à optimiser grâce à la notice.</p>
 
       <p>
-        J’ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu’un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues…
+        J'ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu'un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues…
       </p>
     </div>
 
-    <div class="qote d-flex justify-content-center">
+<!--     <div class="qote d-flex justify-content-center">
       <div class="qote-content">
         <i class="d-flex align-items-center justify-content-center qote-i fas fa-quote-right"></i>
         <p><i><b>On ne devient pas normal impunément</b></i></p>
@@ -189,11 +203,122 @@
         <hr>
         <h3>Le philosophe Emile Cioran</h3>
       </div>
+    </div> -->
+    <div class="d-none d-md-block">
+      <%= image_tag "calvin.png" %>
     </div>
 
   </div>
 </div>
 
+<%= render "shared/transition", image_path: "transitions/form.jpg",
+                                title: "Je souhaite comprendre",
+                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+
+
+<div class="wrapper text-center">
+  <div class="container">
+    <div class="content p-5">
+      <h2>Ca me parle</h2>
+      <p>
+        <b>Témoignages issus du livre de Audrey Bouquet "À la rencontre de mes semblables à rayures"</b>
+      </p>
+
+      <div class="d-none d-md-block">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Gaëlle</h3>
+                      <p>"Quand j'ai su que j'étais zèbre, je me suis dit <b>"OK. Qu'est ce je fais de ça maintenant ?"</b>. J'avais besoin de <b>réponses</b>, d'en discuter avec quelqu'un, de comprendre ce que pouvait m'apporter cette découverte. Le sentiment de devoir <b>renouer avec cette part de moi-même était primordial</b>. Et j'ai compris rapidement que rencontrer des gens comme moi était fondamental. Il y a tout d'abord eu un besoin d'appartenance à un groupe, pour après m'en défaire et être vraiment qui je suis. Juste qui je suis et ne plus rentrer dans une case. Pour moi, participer à des groupes de discussions zèbres est important pour me découvrir et me comprendre."</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Romain</h3>
+                      <p>"Quand tu ne sais pas que tu es surdoué, mais que tu commences à percevoir des éléments à ce sujet, tu es rattrapé par ça un jour ou l'autre (...). C'est vraiment l'image, car à chaque fois que j'ai voulu enterrer le truc, j'étais rattrapé par ce questionnement et j'y repensais. <b>Il faut oser</b>, c'est important, oser franchir le pas, car dès lors que le questionnement personnel est là, nous sommes <b>légitimes</b>. La légitimité de ce questionnement est là et ce questionnement n'a pas à etre remis en cause. <b>Les professionnels spécialisés savent accueillir ça</b>. Ils savent réconforter, accompagner. En tous cas, ce n'est pas de leur côtè qu'il faut redouter ou craindre quelque chose. Et si j'ai un regret, c'est de ne pas m'avoir fait confiance au moment où je me posais la question."</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Edwige</h3>
+                      <p>"En deuxiéme et troisème année de psycho, nous nous entrainons à passer des tests et le prof m'a fait passer le WAIS entièrement. Il m'a donné le score et j'ai dit "Oui, bien sûr, vous avez raison! Il n'y aurait pas un soucis par hasard, <b>vous avez dû vous planter non ?</b>". La semaine d'après, il m'a fait passer le WISC, le test des enfants, pour voir ce que ça donnait et je me suis retrouvée avec un score de 149 et là encore je me suis dit "Oui, c'est normal, c'est pour les enfants donc le score est faussé." C'était en 2009. Depuis j'ai avancé là-dessus mais, sur le coup, <b>je n'y croyais pas une seconde</b>"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Zébrette</h3>
+                      <p>"J'ai souvent entendu que les <b>surdoués</b>, HP, zèbres... <b>c'est Einstein, Mozart... sauf que non, pas forcément</b>. Il y a une espèce de tabou sur le sujet, surtout en entreprise où on m'a plusieurs fois fait remarquer d'éviter le sujet. <b>Les gens me trouvent bizarre</b> et me le disent souvent, de façon plus ou moins délicate. Dèjà, je suis une femme qui travaille en informatique, ce qui n'est pas courant"</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Gaëlle</h3>
+                      <p>"A vingt ans, je n'avais pas vraiment de recul sur ma vie. Mais à partir de trente, j'ai commencé à identifier plus facilement les schémas répétitifs qui jalonnaient mon existence. Je trouve que l'un des plus évidents et contraignants est celui en lien avec le travail. Peut etre parce que j'y investis beaucoup de temps et d'énergie. <b>La période la plus longue durant laquelle je suis restée à un poste, c'est 3 ans 1/2</b>, en me forçant. Et au bout de 2 ans, j'étais devenue une sorte de zombie."</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Catherine</h3>
+                      <p>"J'ai tellement eu le sentiment de ne pas être comprise que je pense qu'à un moment, je n'ai plus cherché à dire qui je suis. Ce qui a désormais changé, c'est que je suis plus attentive à rencontrer des personnes comme moi, aussi car cela vient me nourrir et c'est tellement bon, <b>juste bon de pouvoir exister là, sans avoir besoin de se justifier</b> sur son mode de fonctionnement."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Anne</h3>
+                      <p>"Maintenant que j'ai cette donnée de qui je suis, <b>pourquoi devrais-je me cantonner à un seul truc</b> alors que je peux mener de front plusieurs projets. Nous ne sommes pas obligés de choisir! J'ai une machine à coudre que j'ai achetée il y a 2 ans. Je l'ai ressortie il n'y a pas longtemps et je fais mon jardin la journe. Mon mari me disait "Tu pars dans tous les sens, n'importe quoi, tu ne finis même pas un truc...". Mais en fait si, je le fais juste ne plusieurs étapes. J'ai le sentiment de finir tout ce que je commence."</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>Marianne</h3>
+                      <p>"<b>Me poser toujours 36000 questions</b>, c'est ce qui caractérise essentiellement mon mode de pensée ! J'essaie depuis quelque temps de trouver des stratégies de contournement pour ne pas être trop polluée par ces questionnements incessants. Généralement, je pense à quelque chose une fois, puis l'idée part dans les tréfonds de ma mémoire et ne ressurgit généralement que trop tard. Je note les choses que je dois faire dans une application "Rappels" pour ne rien oublier."</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="border border-dark p-2">
+                      <h3>R.</h3>
+                      <p>"C'est un peu le probléme de se poser des <b>questions philosophiques pour tout et rien</b>, pour des choix à faire. J'ai de <b>grosses difficultée à faire des choix</b>. Pour caricaturer : quand j'ai à choisir entre un pain au chocolat et un croissant, très vite, de fil en aiguille, je vais me demander quel est le sens de la vie. Et du coup, plutot que de faire des choix, j'abandonne, je ne choisis pas. J'ai une espèce de fuite en avant. C'est une procrastination déguisée."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
