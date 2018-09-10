@@ -101,6 +101,7 @@ a:hover {
 .wrapper {
   border-bottom: 4px solid #CABB9F;
   padding: 40px 0px;
+  min-height: calc(100vh - 170px);
 }
 
 .wrapper-grid{

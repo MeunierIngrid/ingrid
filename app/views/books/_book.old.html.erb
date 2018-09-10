@@ -1,0 +1,16 @@
+<div class="col-12 col-md-4">
+  <div class="d-flex justify-content-center">
+    <div class="book-card">
+  <!--     <div class="book-card-img" style='background-image: url("<%#= url_for book.cover %>");'></div> -->
+      <%= image_tag book.cover, class: "book-card-img" %>
+      <div class="book-card-content d-flex justify-content-between flex-column">
+  <!--       <div class="book-card-title"><%#= book.title %></div>
+        <div class="book-card-price">2<%#= book.price %>€</div> -->
+        <div class="book-card-title text-center"><%= book.price %>€</div>
+        <div class="text-center">
+          <%= link_to "Commander", book, class: "btn-red" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

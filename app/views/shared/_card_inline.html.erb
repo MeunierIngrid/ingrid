@@ -1,0 +1,14 @@
+<div class="border border-dark d-flex justify-content-between flex-wrap p-4 mb-4">
+  <div>
+    <%= image_tag image_path, class: "img-thumbnail m-x-5 w-200px" %>
+  </div>
+  <div class="max-w-850px text-left pl-4">
+    <h3><%= title %></h3>
+    <p>de <b><%= author %></b></p>
+    <h2><%= price %>€</h2>
+    <p><%= abstract %></p>
+    <div class="d-flex justify-content-end">
+      <%= link_to link_name, link_path, class: "btn-red" %>
+    </div>
+  </div>
+</div>

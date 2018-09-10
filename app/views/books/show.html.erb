@@ -1,18 +1,40 @@
-<h1><%= @book.title %></h1>
-
-<%= form_tag book_orders_path(@book) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@book.price) %></span>
-    </label>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="<%= Book %>"
-    data-email="<%= current_user.email %>"
-    data-description="Book <%= @book.title %>"
-    data-amount="<%= @book.price_cents %>"
-    data-currency="<%= @book.price.currency %>">
-  </script>
-<% end %>
+<div class="wrapper text-center bg-marron-light">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="d-flex justify-content-center">
+            <div class="book-card">
+              <%= image_tag @book.cover, class: "book-card-img" %>
+              <div class="book-card-content d-flex justify-content-between flex-column">
+                <div class="book-card-title text-center"><%= @book.price %>€</div>
+                <div class="text-center">
+                  <%#= link_to "Commander", @book, class: "btn-red" %>
+                  <%= form_tag book_orders_path(@book) do %>
+                  <!--   <article>
+                      <label class="amount">
+                        <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
+                      </label>
+                    </article> -->
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-name="<%= Book %>"
+                      data-description="Book <%= @book.title %>"
+                      data-amount="<%= @book.price_cents %>"
+                      data-currency="<%= @book.price.currency %>">
+                    </script>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <h1><%= @book.title %></h1>
+          <h3><%= @book.abstract %></h3>
+          <%= @book.description.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 

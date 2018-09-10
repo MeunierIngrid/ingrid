@@ -38,7 +38,7 @@
                                 content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
 
 
-<div class="wrapper text-center">
+<div class="wrapper text-center bg-marron-light">
   <div class="container">
     <div class="content p-5">
       <h2>Dans chaque e-book, vous y trouverez :</h2>
@@ -46,7 +46,7 @@
       <%= image_tag "book-composition.png", class: "max-w-850px" %>
 
 
-      <ul>
+<!--       <ul>
         <li>
           <h4>L'essentiel</h4>
           <p>
@@ -83,11 +83,15 @@
             Cet ebook vous parlera du besoin des HP en matière de quête de sens, de spiritualité, d'éthique..., trop souvent passé à la trappe et pourtant oh combien important.
           </p>
         </li>
-      </ul>
+      </ul> -->
     </div>
-  </div>
-  <div class="row">
-    <%= render @books %>
+
+    <div class="content p-5">
+      <h2>Liste des e-books disponibles</h2>
+    </div>
+    <div class="row">
+      <%= render @books %>
+    </div>
   </div>
 </div>
 
