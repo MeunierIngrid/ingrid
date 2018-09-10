@@ -10,8 +10,9 @@ gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 
+gem 'jquery-rails'
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sass-rails'
 gem 'simple_form'
@@ -24,6 +25,7 @@ gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 gem 'money-rails'
 gem 'stripe'
+gem 'ckeditor'
 
 
 group :development do

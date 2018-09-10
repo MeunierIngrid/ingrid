@@ -1,0 +1,30 @@
+.quote-borders {
+  height: 10px;
+  width: 100%;
+  border-top: solid 3px #CABB9F;
+  border-bottom: solid 1px #CABB9F;
+}
+
+.qote-content {
+  position: relative;
+}
+
+.qote-i {
+  position: absolute;
+  top: -45px;
+  left: -90px;
+  font-size: 40px;
+  border-radius: 50%;
+  background-color: #CABB9F;
+  color: white;
+  height: 80px;
+  width: 80px;
+}
+
+.qote-content > hr {
+  color: #88744F;
+}
+
+.qote-content > h3 {
+  color: #AA9774;
+}
