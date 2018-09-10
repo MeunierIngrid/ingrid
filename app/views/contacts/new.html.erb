@@ -1,0 +1,177 @@
+<div class="wrapper text-center bg-marron-light">
+  <div class="container">
+    <div class="content p-5">
+
+      <h1>Je souhaite en discuter</h1>
+
+      <h3>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</h3>
+
+      <h2>Consultations en appel vidéo</h2>
+
+      <p>Etant contacté par des personnes venant de la France entière et souhaitant dématérialiser mon travail pour plus de souplesse, j’ai pris le parti de ne désormais consulter que par appel vidéo et de ne plus avoir de cabinet fixe. Je pratique des consultations à distance depuis plusieurs années maintenant et cela fonctionne très bien.</p>
+
+      <div class="pricing m-5 p-5">
+        <h2>Tarifs de consultation</h2>
+        <p>
+          La consultation dure soit <span>1h</span>, soit 1h30 et est à <span>70€</span> de l’heure (100€ pour 1h30) à raison de 2 à 3 consultations par mois.
+          Ce montant sera à payer en avance (au plus tard 24h à l’avance) pour que je puisse vous assurer le créneau.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/transition", image_path: "transitions/book.jpg",
+                                title: "Je souhaite comprendre",
+                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+
+
+<div class="wrapper text-center">
+  <div class="container">
+    <div class="content p-5">
+      <h2>Objet de mes consultations</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Mes consultations concernent :</h3>
+
+        <%= render "condition",
+                   color: "blue",
+                   icon: "check",
+                   title: "Les adultes",
+                   content: "Surdoués ou qui se suspectentsurdoués"  %>
+
+        <%= render "condition",
+                   color: "blue",
+                   icon: "check",
+                   title: "Uniquement le haut potentiel",
+                   content: "Conseils personnalisés et individualisés sur le HP"  %>
+
+        <%= render "condition",
+                   color: "blue",
+                   icon: "check",
+                   title: "Des acompagnements courts",
+                   content: "De l'ordre de 3 à 6 scéances d'1h-1h30"  %>
+
+      </div>
+
+      <!-- center -->
+
+      <div class="col-md-6">
+        <h3>Mes consultations ne concernent pas</h3>
+
+        <%= render "condition",
+                   color: "red",
+                   icon: "times",
+                   title: "Les enfants les couples et les familles",
+                   content: "Même concernés par les HP, >16ans"  %>
+
+        <%= render "condition",
+                   color: "red",
+                   icon: "times",
+                   title: "Le traitements des névroses",
+                   content: "Tous problèmes liés des névroses"  %>
+
+        <%= render "condition",
+                   color: "red",
+                   icon: "times",
+                   title: "Unaccompagnement thérapeutique",
+                   content: "C'est à dire un suivi thérapeutique de longue durée"  %>
+
+      </div>
+
+    </div>
+    <%= image_tag "RDV.png", class: "max-w-450px mt-5" %>
+  </div>
+</div>
+
+<%= render "shared/transition", image_path: "transitions/book.jpg",
+                                title: "Je souhaite comprendre",
+                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+
+
+<div id="contact"></div>
+
+<div class="wrapper bg-marron-light">
+  <%= simple_form_for @contact do |f| %>
+    <div class="container">
+      <div class="content p-5 text-center">
+        <h2>Contact</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex justify_content-center">
+            <p class="p-2">Prénom :</p>
+            <div class="flex-1-auto">
+              <%= f.input :first_name, label: false %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify_content-center">
+            <p class="p-2">Nom :</p>
+            <div class="flex-1-auto">
+              <%= f.input :last_name, label: false %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="d-flex justify_content-center">
+            <p class="p-2">Email :</p>
+            <div class="flex-1-auto">
+              <%= f.input :email, label: false %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex justify_content-center">
+            <p class="p-2">Âge : </p>
+            <div class="flex-1-auto">
+              <%= f.input :age, label: false %>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <%= f.input :hp, as: :radio_buttons, label: 'Diagnostiqué Haut Potentiel' %>
+        </div>
+
+        <div class="col-md-12">
+          <h3>je souhaite vous contacter pour :</h3>
+        </div>
+
+        <div class="col-md-6">
+          <%= f.input :rdv,
+                      collection: [
+                        ["me faire bilanter", :bilan],
+                        ["suivre un accompagnement sur mon haut potentiel", :suivi],
+                        ["Autre", :other]
+                      ],
+                      as: :radio_buttons, label: "Prendre rendez-vous" %>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify_content-center">
+            <p class="p-2">Si "Autre", précider : </p>
+            <div class="flex-1-auto">
+              <%= f.input :rdv_other, label: false %>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <%= f.input :informations, label: "Pour vous demander des renseignements :" %>
+        </div>
+        <div class="col-12">
+          <%= f.input :other, label: "Pour une autre raison :" %>
+        </div>
+        <div class="col-12">
+          <%= f.input :complement, label: "Complément d'information" %>
+        </div>
+
+        <div class="text-center w-100">
+          <%= f.button :submit, class: "btn btn-red" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

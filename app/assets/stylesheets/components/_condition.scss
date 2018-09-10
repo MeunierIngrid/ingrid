@@ -1,0 +1,23 @@
+.condition {
+  color: white;
+  border-radius: 50px;
+  height: 76px;
+  h4 {
+    margin: 5px 0px 0px 0px;
+  }
+  p {
+    margin: 2px;
+    font-size: 17px;
+  }
+ i {
+    font-size: 32px;
+    // border: 4px solid white;
+    border-radius: 38px;
+    width: 76px;
+    height: 76px;
+    margin: -4px;
+  }
+  .title {
+    flex: 1 0 auto;
+  }
+}

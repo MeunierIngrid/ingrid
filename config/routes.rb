@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show] do
     resources :orders, only: [:show, :create], shallow: true
   end
-  resources :contact, only: [:new]
+  resources :contacts, only: [:new, :create]
 end

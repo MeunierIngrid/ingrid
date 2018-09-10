@@ -25,6 +25,7 @@ gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 gem 'money-rails'
 gem 'stripe'
+gem 'ckeditor'
 
 
 group :development do
