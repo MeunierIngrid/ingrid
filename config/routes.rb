@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get '/biography', to: "pages#bio"
+
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  get '/biography', to: "pages#bio"
+  get '/ressources', to: "pages#ressources"
   get 'quizz-informations', to: 'pages#survey', as: 'quizz_informations'
 
   resources :surveys, only: [:new, :create, :show]

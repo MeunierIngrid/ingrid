@@ -9,4 +9,7 @@ class PagesController < ApplicationController
 
   def survey
   end
+
+  def ressources
+  end
 end

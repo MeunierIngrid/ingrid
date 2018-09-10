@@ -13,8 +13,8 @@
       <%= link_to "Le questionnaire", quizz_informations_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Les e-books", books_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Qui suis-je ?", biography_path, class: "navbar-wagon-item navbar-wagon-link"  %>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-      <a href="#" class="navbar-wagon-item navbar-wagon-link">Les ressources</a>
+      <%= link_to "Contact", biography_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+      <%= link_to "Les ressources", ressources_path, class: "navbar-wagon-item navbar-wagon-link"  %>
       <% if current_user %>
         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
@@ -33,9 +33,9 @@
       <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <%= link_to "Le questionnaire", quizz_informations_path, class: "dropdown-item" %>
         <%= link_to "Les e-books", books_path, class: "dropdown-item" %>
-      <%= link_to "Qui suis-je ?", biography_path, class: "dropdown-item"  %>
-        <a class="dropdown-item" href="#">Contact</a>
-        <a class="dropdown-item" href="#">Les ressources</a>
+        <%= link_to "Qui suis-je ?", biography_path, class: "dropdown-item"  %>
+        <%= link_to "Contact", biography_path, class: "dropdown-item"  %>
+        <%= link_to "Les ressources", ressources_path, class: "dropdown-item"  %>
         <% if current_user %>
           <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
