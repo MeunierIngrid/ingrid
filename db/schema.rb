@@ -68,13 +68,13 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
   end
 
   create_table "anwsers", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "survey_id"
     t.bigint "question_id"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_anwsers_on_question_id"
-    t.index ["user_id"], name: "index_anwsers_on_user_id"
+    t.index ["survey_id"], name: "index_anwsers_on_survey_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -127,6 +127,14 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "surveys", force: :cascade do |t|
+    t.string "email"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_surveys_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -150,8 +158,9 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
   end
 
   add_foreign_key "anwsers", "questions"
-  add_foreign_key "anwsers", "users"
+  add_foreign_key "anwsers", "surveys"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
   add_foreign_key "questions", "questions_categories"
+  add_foreign_key "surveys", "users"
 end
