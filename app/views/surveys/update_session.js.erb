@@ -1,0 +1,5 @@
+var survey_inputs = document.querySelectorAll('input[name="survey[answers_attributes][<%= @question_id %>][score]"]');
+
+var totalScores = document.querySelector('#total-scores')
+totalScores.innerHTML = '<%= j render "shared/total_scores_bar", total_scores: @total_scores %>';
+survey_inputs[<%= @score %>].checked = true;

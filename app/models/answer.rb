@@ -1,4 +1,4 @@
-class Anwser < ApplicationRecord
+class Answer < ApplicationRecord
   belongs_to :survey
   belongs_to :question
 end

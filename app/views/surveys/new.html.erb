@@ -1,2 +1,63 @@
-<h1>Surveys#new</h1>
-<p>Find me in app/views/surveys/new.html.erb</p>
+
+<div id="total-scores">
+  <%= render "shared/total_scores_bar", total_scores: @total_scores %>
+</div>
+
+<h1>Commencer le test</h1>
+
+<%= simple_form_for @survey do |f| %>
+  <div class="container">
+    <% QuestionsCategory.all.each do |questions_category| %>
+      <h2><%= questions_category.title %></h2>
+      <div class="row">
+        <% questions_category.questions.each do |question| %>
+          <div class="col-md-8">
+            <p><%= question.title %></p>
+          </div>
+          <div class="col-md_4">
+            <fieldset class="form-group radio_buttons optional survey_answers_score">
+              <div class="surveys">
+                <% 4.times do |i| %>
+                  <label>
+                    <input type="radio" <%= 'checked="checked"' if i == session[:answers_attributes][question.id.to_s] %> value="<%= i %>" name="survey[answers_attributes][<%= question.id %>][score]" />
+                    <div class="number" data-qid=<%= question.id %> ><%= i %></div>
+                  </label>
+                <% end %>
+              </div>
+            </fieldset>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  email: <%= f.text_field :email %>
+  <%= f.submit 'Create Survey' %>
+<% end %>
+
+<%= link_to session_survey_path, "#", id: "update-session", class: "d-none", remote: true %>
+
+<script>
+  // const session = () => {
+  //   const checkedInputs = document.querySelectorAll("input:checked");
+  //   const s = {};
+  //   checkedInputs.forEach((checkedInput) => {
+  //     s[checkedInput.name.split("][")[1]] = checkedInput.value;
+  //   });
+  //   return s
+  // };
+  const sessionButton = document.querySelector("#update-session");
+  const radios = document.querySelectorAll(".number");
+  radios.forEach((radio)=>{
+    radio.addEventListener("click", (e)=>{
+      e.preventDefault();
+      // s = session();
+      // s[e.currentTarget.dataset.qid] = e.currentTarget.innerText
+      // sessionButton.href = `${sessionButton.innerText}?session=${JSON.stringify(s)}`;
+      sessionButton.href = `${sessionButton.innerText}?question_id=${e.currentTarget.dataset.qid}&score=${e.currentTarget.innerText}`;
+      sessionButton.click();
+    });
+  });
+</script>
+
+
+

@@ -1,0 +1,14 @@
+<div class="total-score-wrapper">
+  <% total_scores.each do |title, total_score| %>
+    <div class="total-score">
+      <p><%= title %></p>
+      <div class="total-score-progress">
+        <div class="total-score-circle"><%= total_score %>%</div>
+        <div class="total-score-bg-bar">
+          <div class="total-score-bar" style="width: <%= (total_score * 2).to_i %>px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -67,14 +67,14 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "anwsers", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.bigint "survey_id"
     t.bigint "question_id"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_anwsers_on_question_id"
-    t.index ["survey_id"], name: "index_anwsers_on_survey_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["survey_id"], name: "index_answers_on_survey_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -157,8 +157,8 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "anwsers", "questions"
-  add_foreign_key "anwsers", "surveys"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "surveys"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
   add_foreign_key "questions", "questions_categories"

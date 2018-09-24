@@ -1,0 +1,45 @@
+.total-score-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.total-score {
+  p {
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+  }
+}
+
+.total-score-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-score-circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid grey;
+}
+
+.total-score-bg-bar {
+  width: 170px;
+  height: 10px;
+  background-color: grey;
+  margin: 0 -2px;
+}
+
+.total-score-bar {
+  width: 60%;
+  height: 10px;
+  background-color: green;
+}
