@@ -1,12 +1,12 @@
 <div class="total-score-wrapper">
   <% total_scores.each do |title, total_score| %>
-    <div class="total-score <%= 'pointer' if total_scores.keys.index(title).even? %> ">
-      <p><%= title %></p>
-      <div class="total-score-progress">
+    <div class="total-score">
+      <div class="total-score-content <%= 'pointer' if total_scores.keys.index(title).even? %> ">
+        <p><%= title %></p>
         <div class="total-score-circle"><%= total_score %>%</div>
-        <div class="total-score-bg-bar">
-          <div class="total-score-bar" style="width: <%= (total_score * 1.7).to_i %>px;">
-          </div>
+      </div>
+      <div class="total-score-bg-bar">
+        <div class="total-score-bar" style="width: <%= (total_score * 2).to_i %>px;">
         </div>
       </div>
     </div>
