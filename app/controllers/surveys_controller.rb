@@ -6,6 +6,7 @@ class SurveysController < ApplicationController
     # redirect to survey show if session is not empty?
     @survey = Survey.new
     session[:answers_attributes] = {} if session[:answers_attributes].nil?
+    @question_number = 0
     set_total_scores
   end
 

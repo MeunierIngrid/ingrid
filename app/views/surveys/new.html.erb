@@ -12,7 +12,7 @@
       <div class="row">
         <% questions_category.questions.each do |question| %>
           <div class="col-md-8">
-            <p><%= question.title %></p>
+            <p><%= @question_number += 1 %> - <%= question.title %></p>
           </div>
           <div class="col-md_4">
             <fieldset class="form-group radio_buttons optional survey_answers_score">
@@ -34,7 +34,7 @@
 
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="btn-red" data-toggle="modal" data-target="#exampleModal">
     Soumettre le formulaire
   </button>
 
@@ -55,7 +55,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          <%= f.submit 'Envoyer', class: "btn btn-success" %>
+          <%= f.submit 'Envoyer', class: "btn-red" %>
         </div>
       </div>
     </div>

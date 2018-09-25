@@ -211,6 +211,22 @@ a:hover {
   margin: 20px 0px;
 }
 
+.btn-red:hover {
+  opacity: 0.8;
+}
+
+.btn-brown {
+  background-color: #857454;
+  color: $white;
+  padding: 20px;
+  border-radius: 3px;
+  margin: 20px 0px;
+}
+
+.btn-red:hover {
+  opacity: 0.8;
+}
+
 .w-200px {
   width: 200px;
 }
@@ -253,4 +269,34 @@ a:hover {
 
 .flex-1-auto {
   flex: 1 0 auto;
+}
+
+.pointer {
+  width: 200px;
+  height: 166px;
+  position: relative;
+  background: #FFFBF3;
+}
+.pointer:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 83px solid transparent;
+  border-bottom: 83px solid transparent;
+}
+.pointer:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #FFFBF3;
+  border-top: 83px solid transparent;
+  border-bottom: 83px solid transparent;
 }
