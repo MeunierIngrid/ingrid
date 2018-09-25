@@ -10,12 +10,19 @@ class SurveysController < ApplicationController
   end
 
   def create
-    session[:answers_attributes] = params.require(:survey)
-          .permit(answers_attributes: {})[:answers_attributes]
-          .to_h
-          .map{|k, v| [k, v[:score].to_i]}
-          .to_h
-    redirect_to new_survey_path
+    # session[:answers_attributes] = params.require(:survey)
+    #       .permit(answers_attributes: {})[:answers_attributes]
+    #       .to_h
+    #       .map{|k, v| [k, v[:score].to_i]}
+    #       .to_h
+    @survey = Survey.new(survey_params)
+    if @survey.save
+      redirect_to @survey
+    else
+      raise
+      redirect_to new_survey_path
+      # message
+    end
   end
 
   def show
@@ -30,6 +37,10 @@ class SurveysController < ApplicationController
   end
 
   private
+
+  def survey_params
+    params.require(:survey).permit(:email, answers_attributes: [:score, :question_id, :_destroy])
+  end
 
   def set_total_scores
     session_qids = session[:answers_attributes].map{|k, v| k.to_i}

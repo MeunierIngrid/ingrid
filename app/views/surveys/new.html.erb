@@ -17,6 +17,7 @@
           <div class="col-md_4">
             <fieldset class="form-group radio_buttons optional survey_answers_score">
               <div class="surveys">
+                <input value="<%= question.id %>" name="survey[answers_attributes][<%= question.id %>][question_id]" class="d-none" />
                 <% 4.times do |i| %>
                   <label>
                     <input type="radio" <%= 'checked="checked"' if i == session[:answers_attributes][question.id.to_s] %> value="<%= i %>" name="survey[answers_attributes][<%= question.id %>][score]" />
@@ -30,8 +31,36 @@
       </div>
     <% end %>
   </div>
-  email: <%= f.text_field :email %>
-  <%= f.submit 'Create Survey' %>
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+    Soumettre le formulaire
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Finaliser mon test</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <h2>Email</h2>
+          <%= f.text_field :email %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          <%= f.submit 'Envoyer', class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <% end %>
 
 <%= link_to session_survey_path, "#", id: "update-session", class: "d-none", remote: true %>
