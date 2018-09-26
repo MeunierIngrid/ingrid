@@ -3,7 +3,7 @@
     <div class="total-score">
       <div class="total-score-content <%= 'pointer' if total_scores.keys.index(title).even? %> ">
         <p><%= title %></p>
-        <div class="total-score-circle"><%= total_score %>%</div>
+        <div class="total-score-circle <%= total_score == 100 ? 'bg-marron-dark' : 'bg-marron-light' %> "><%= total_score %>%</div>
       </div>
       <div class="total-score-bg-bar">
         <div class="total-score-bar" style="width: <%= (total_score * 2).to_i %>px;">
@@ -12,3 +12,4 @@
     </div>
   <% end %>
 </div>
+

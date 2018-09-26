@@ -1,92 +1,115 @@
 
+
+<div class="bg-marron-light">
+
+  <div class="container text-center">
+    <div class="content p-5">
+
+      <h1>Commencer le test</h1>
+
+      <h3>vous trouverez ici des e-book sur le fonctionnement de la douance, avec des conseils et trucs et astuces</h3>
+
+    </div>
+  </div>
+</div>
+
 <div id="total-scores">
   <%= render "shared/total_scores_bar", total_scores: @total_scores %>
 </div>
 
-<h1>Commencer le test</h1>
+<div id="wrapper-after-progress-bar" class="wrapper bg-marron-light">
 
-<%= simple_form_for @survey do |f| %>
-  <div class="container">
-    <% QuestionsCategory.all.each do |questions_category| %>
-      <h2><%= questions_category.title %></h2>
-      <div class="row">
-        <% questions_category.questions.each do |question| %>
-          <div class="col-md-8">
-            <p><%= @question_number += 1 %> - <%= question.title %></p>
-          </div>
-          <div class="col-md_4">
-            <fieldset class="form-group radio_buttons optional survey_answers_score">
-              <div class="surveys">
-                <input value="<%= question.id %>" name="survey[answers_attributes][<%= question.id %>][question_id]" class="d-none" />
-                <% 4.times do |i| %>
-                  <label>
-                    <input type="radio" <%= 'checked="checked"' if i == session[:answers_attributes][question.id.to_s] %> value="<%= i %>" name="survey[answers_attributes][<%= question.id %>][score]" />
-                    <div class="number" data-qid=<%= question.id %> ><%= i %></div>
-                  </label>
-                <% end %>
-              </div>
-            </fieldset>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+  <%= simple_form_for @survey do |f| %>
+    <div class="container">
+      <% QuestionsCategory.all.each do |questions_category| %>
+        <h2><%= questions_category.title %></h2>
+        <div class="row">
+          <% questions_category.questions.each do |question| %>
+            <div class="col-md-8">
+              <p><%= @question_number += 1 %> - <%= question.title %></p>
+            </div>
+            <div class="col-md_4">
+              <fieldset class="form-group radio_buttons optional survey_answers_score">
+                <div class="surveys">
+                  <input value="<%= question.id %>" name="survey[answers_attributes][<%= question.id %>][question_id]" class="d-none" />
+                  <% 4.times do |i| %>
+                    <label>
+                      <input type="radio" <%= 'checked="checked"' if i == session[:answers_attributes][question.id.to_s] %> value="<%= i %>" name="survey[answers_attributes][<%= question.id %>][score]" />
+                      <div class="number" data-qid=<%= question.id %> ><%= i %></div>
+                    </label>
+                  <% end %>
+                </div>
+              </fieldset>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+
+<div class="bg-marron-light">
+
+  <div class="container text-center">
+    <div class="content p-5">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn-red" data-toggle="modal" data-target="#exampleModal">
+        Soumettre le formulaire
+      </button>
+    </div>
   </div>
+</div>
 
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn-red" data-toggle="modal" data-target="#exampleModal">
-    Soumettre le formulaire
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Finaliser mon test</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-center">
-          <h2>Email</h2>
-          <%= f.text_field :email %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          <%= f.submit 'Envoyer', class: "btn-red" %>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Finaliser mon test</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <p>Veillez compléter votre mail s'il vous plait, afin qu'un lien vers vos résultats vous soit envoyer.</p>
+            <h2>Email</h2>
+            <%= f.text_field :email, placeholder: "john.smith@gmail.com" %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-small-marron-dark" data-dismiss="modal">Annuler</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <%= f.submit 'Voir mes résultats', class: "btn-small-red" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-<% end %>
+  <% end %>
 
-<%= link_to session_survey_path, "#", id: "update-session", class: "d-none", remote: true %>
+  <%= link_to session_survey_path, "#", id: "update-session", class: "d-none", remote: true %>
+</div>
 
 <script>
-  // const session = () => {
-  //   const checkedInputs = document.querySelectorAll("input:checked");
-  //   const s = {};
-  //   checkedInputs.forEach((checkedInput) => {
-  //     s[checkedInput.name.split("][")[1]] = checkedInput.value;
-  //   });
-  //   return s
-  // };
   const sessionButton = document.querySelector("#update-session");
   const radios = document.querySelectorAll(".number");
   radios.forEach((radio)=>{
     radio.addEventListener("click", (e)=>{
       e.preventDefault();
-      // s = session();
-      // s[e.currentTarget.dataset.qid] = e.currentTarget.innerText
-      // sessionButton.href = `${sessionButton.innerText}?session=${JSON.stringify(s)}`;
       sessionButton.href = `${sessionButton.innerText}?question_id=${e.currentTarget.dataset.qid}&score=${e.currentTarget.innerText}`;
       sessionButton.click();
     });
   });
 </script>
 
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  $(document).on('scroll',function(){
+     if ($(document).scrollTop() > 330) {
+         $('#total-scores').addClass('fixed')
+         $('#wrapper-after-progress-bar').addClass('margin-for-progress-bar-fixed')
+     } else {
+         $('#total-scores').removeClass('fixed')
+         $('#wrapper-after-progress-bar').removeClass('margin-for-progress-bar-fixed')
+     }
+  });
+</script>
 

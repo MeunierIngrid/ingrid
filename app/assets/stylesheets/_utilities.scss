@@ -215,6 +215,40 @@ a:hover {
   opacity: 0.8;
 }
 
+
+.btn-small-red {
+  background-color: #BE1621;
+  color: $white;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-red:hover {
+  opacity: 0.8;
+}
+
+.btn-small-marron-dark {
+  background-color: #CABB9F;
+  color: $white;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-marron-dark:hover {
+  opacity: 0.8;
+}
+
+.btn-small-marron-light {
+  background-color: #FFFBF3;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-marron-light:hover {
+  opacity: 0.8;
+}
+
 .btn-brown {
   background-color: #857454;
   color: $white;
@@ -271,32 +305,4 @@ a:hover {
   flex: 1 0 auto;
 }
 
-.pointer {
-  width: 200px;
-  height: 166px;
-  position: relative;
-  background: #FFFBF3;
-}
-.pointer:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid white;
-  border-top: 83px solid transparent;
-  border-bottom: 83px solid transparent;
-}
-.pointer:before {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  right: -20px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 20px solid #FFFBF3;
-  border-top: 83px solid transparent;
-  border-bottom: 83px solid transparent;
-}
+
