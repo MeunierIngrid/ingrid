@@ -4,4 +4,12 @@ class Survey < ApplicationRecord
   accepts_nested_attributes_for :answers,
                                 reject_if: proc { |attributes| attributes[:score].blank? },
                                 allow_destroy: true
+
+  def total_score
+    answers.weighted_average
+  end
+
+  def survey_result(total_score)
+    SurveyResult.find_by("max_value >= ? AND min_value <= ?", total_score, total_score)
+  end
 end

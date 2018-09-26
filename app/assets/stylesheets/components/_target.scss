@@ -1,0 +1,38 @@
+.target  {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 50px;
+  .target-chart {
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 20px white;
+    position: relative;
+    margin: auto;
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .target-percentage {
+    color: white;
+    font-size: 84px;
+    .target-percentage-symbol {
+      font-size: 32px;
+      margin-bottom: 80px;
+      position: relative;
+      top: -42px;
+    }
+  }
+  .target-infos {
+    .target-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .target-savings {
+      color: #AAA;
+    }
+  }
+}

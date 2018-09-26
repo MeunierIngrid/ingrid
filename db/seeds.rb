@@ -2,6 +2,7 @@ Answer.destroy_all
 Survey.destroy_all
 Question.destroy_all
 QuestionsCategory.destroy_all
+SurveyResult.destroy_all
 
 if Rails.env.development?
   User.create!(email: 'jonathan.serafini@gmail.com', password: 'azerty')
@@ -114,3 +115,66 @@ end
 
 puts "#{QuestionsCategory.count} questions categories are create!"
 puts "#{Question.count} questions are create!"
+
+SurveyResult.create(
+  title: :normal,
+  min_value: 0,
+  max_value: 65,
+  content: "Votre score est le pourcentage de compatibilité avec le profil de haut potentiel. Vous pouvez
+considérer qu’il y a une faible chance pour que vous soyez une personne à haut potentiel.
+(Ce pré-test n’est cependant pas infaillible et ne donne pas un diagnostic. Rappelez-vous
+qu’il n’est là que pour avoir une première approche informative sur le sujet)
+Soyez cependant assuré(e) que cela ne remet absolument pas en question votre intelligence,
+votre sensibilité ou vos qualités humaines. Ce test met l’accent uniquement sur les
+particularismes comportementaux des surdoués. Sachez qu’il existe 9 intelligences et qu’il
+est particulièrement intéressant de découvrir ses intelligences prédominantes pour en tirer
+partie."
+)
+
+SurveyResult.create(
+  title: :undifined,
+  min_value: 66,
+  max_value: 79,
+  content: "Votre score est le pourcentage de compatibilité avec le profil de haut potentiel. Vous pouvez
+considérer qu’il y a une bonne présomption si vous avez au moins 2 scores au-dessus de
+80%. Observez le score de chaque thème. Si vous avez 2 ou 3 thèmes à plus de 80% et un
+autre beaucoup plus faible, alors il sera normal que le résultat soit plus bas. Il est parfois
+difficile de s’auto évaluer particulièrement lorsque l’on a le syndrome de l’imposteur ou que
+l’on a appris à taire ses émotions ou ses idées en société.
+Je vous conseille vivement de lire des livres sur le sujet pour voir si vous vous reconnaissez.
+(La page “Le Ressources” de mon site répertoriee les livres que je conseille). Allez discuter
+sur des forums. Pour ôter tous doutes, vous pouvez aussi aller vous faire diagnostiquer.
+Si vous ne trouvez pas de réponse à vos questions, n’hésitez pas à me contacter pour un
+entretien et je vous aiguillerai.
+Vous trouvez un lien vers mon e-book “Et si j’étais surdoué” qui vous donnera toutes les
+informations nécessaires si vous souhaitez vous faire tester."
+)
+
+SurveyResult.create(
+  title: :undifined,
+  min_value: 80,
+  max_value: 100,
+  content: "Votre score est le pourcentage de compatibilité avec le profil de haut potentiel. Je vous
+conseille vivement de vous faire bilanter car il existe une présomption très forte. Se faire
+tester ôterait tous doutes et vous permettrait d’avoir des réponses à beaucoup de vos
+interrogations et incompréhensions. Si la détection s’avère positive, cela vous permettra de
+repenser votre vie sous ce nouveau prisme et d’enfin avoir une vie qui vous ressemble.
+Si votre score cognitif est bien plus haut que votre score émotionnel OU que vous avez des
+scores relativement homogènes, il y a de fortes chances que vous ayez un profil laminaire
+(QI homogène)
+Si votre score émotionnel est plus fort que votre score en cognitif OU que vous avez des
+scores hétérogènes, il y a de fortes chances que vous ayez un profil complexe (QI
+hétérogène)
+Vous trouvez un lien vers mon e-book “Et si j’étais surdoué” qui vous donnera toutes les
+informations nécessaires si vous souhaitez vous faire tester."
+)
+
+puts "#{SurveyResult.count} survey results are create!"
+
+
+
+
+
+
+
+

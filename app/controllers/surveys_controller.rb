@@ -2,7 +2,6 @@ class SurveysController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-
     # redirect to survey show if session is not empty?
     @survey = Survey.new
     session[:answers_attributes] = {} if session[:answers_attributes].nil?
@@ -11,13 +10,11 @@ class SurveysController < ApplicationController
   end
 
   def create
-    # session[:answers_attributes] = params.require(:survey)
-    #       .permit(answers_attributes: {})[:answers_attributes]
-    #       .to_h
-    #       .map{|k, v| [k, v[:score].to_i]}
-    #       .to_h
     @survey = Survey.new(survey_params)
     if @survey.save
+      @total_score = @survey.total_score
+      @survey_result = @survey.survey_result(@total_score)
+      # envoie du mail
       redirect_to @survey
     else
       raise
@@ -30,7 +27,6 @@ class SurveysController < ApplicationController
   end
 
   def update_session
-    # session[:answers_attributes] = JSON.parse(params[:session]).map{|k,v| [k, v.to_i]}.to_h
     @question_id = params[:question_id]
     @score = params[:score].to_i
     session[:answers_attributes][@question_id] = @score
