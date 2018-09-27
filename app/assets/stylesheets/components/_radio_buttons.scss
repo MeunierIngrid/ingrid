@@ -13,7 +13,7 @@
     align-items: center;
   }
   input:checked + .number {
-    box-shadow: 0 0 0 2px white, 0 0 0 5px red;
+    box-shadow: 0 0 0 2px white, 0 0 0 5px #BE1621;
   }
   input {
     display: none;
