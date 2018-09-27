@@ -1,0 +1,5 @@
+<svg class="score" width="<%= radius %>" height="<%= radius %>" viewBox="-25 -25 <%= radius %> <%= radius %>">
+  <circle class="score-empty" cx="<%= radius / 2 - 25 %>" cy="<%= radius / 2 - 25 %>" r="<%= radius / 2 - 25 %>" stroke-width="25" fill="none"></circle>
+  <circle class="js-circle score-circle" transform="rotate(-90 <%= radius / 2 - 25 %> <%= radius / 2 - 25 %>)" cx="<%= radius / 2 - 25 %>" cy="<%= radius / 2 - 25 %>" r="<%= radius / 2 - 25 %>" score="<%= score %>" stroke-dasharray="1100" stroke-width="25" stroke-dashoffset="1100" fill="none"></circle>
+  <text class="js-text score-text" x="50%" y="50%" dx="-25" text-anchor="middle" style="font-size: <%= radius / 4 %>;"><%= score %>%</text>
+</svg>

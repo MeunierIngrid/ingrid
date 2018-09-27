@@ -211,6 +211,56 @@ a:hover {
   margin: 20px 0px;
 }
 
+.btn-red:hover {
+  opacity: 0.8;
+}
+
+
+.btn-small-red {
+  background-color: #BE1621;
+  color: $white;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-red:hover {
+  opacity: 0.8;
+}
+
+.btn-small-marron-dark {
+  background-color: #CABB9F;
+  color: $white;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-marron-dark:hover {
+  opacity: 0.8;
+}
+
+.btn-small-marron-light {
+  background-color: #FFFBF3;
+  color: black;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.btn-small-marron-light:hover {
+  opacity: 0.8;
+}
+
+.btn-brown {
+  background-color: #857454;
+  color: $white;
+  padding: 20px;
+  border-radius: 3px;
+  margin: 20px 0px;
+}
+
+.btn-red:hover {
+  opacity: 0.8;
+}
+
 .w-200px {
   width: 200px;
 }
@@ -254,3 +304,5 @@ a:hover {
 .flex-1-auto {
   flex: 1 0 auto;
 }
+
+

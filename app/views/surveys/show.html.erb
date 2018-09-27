@@ -1,2 +1,47 @@
-<h1>Surveys#show</h1>
-<p>Find me in app/views/surveys/show.html.erb</p>
+<div class="bg-marron-light">
+
+  <div class="container text-center">
+    <div class="content p-5">
+
+      <h1>Les résultats de votre test</h1>
+
+      <h3>vous trouverez ici des e-book sur le fonctionnement de la douance, avec des conseils et trucs et astuces</h3>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= render "shared/score_circle", radius: 300, score: @total_score  %>
+  </div>
+
+  <div class="container text-center">
+    <div class="content p-5">
+      <h3>Vous avez obtenu un score entre <%= @survey_result.min_value %>% et <%= @survey_result.max_value %>%</h3>
+      <p><%= @survey_result.content %></p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-marron-light">
+  <div class="container text-center">
+    <div class="content p-5">
+      <h1>Vos résultats par thématiques</h1>
+    </div>
+  </div>
+</div>
+
+<div class="bg-marron-light">
+  <div class="container">
+    <div class="row">
+      <% QuestionsCategory.all.each do |category| %>
+        <div class="col-md-3 text-center">
+          <%= render "shared/score_circle", radius: 176, score: @survey.answers.filter_by_category(category).weighted_average.to_i  %>
+        </div>
+        <div class="col-md-9">
+          <h3><%= category.title %></h3>
+          <p><%= category.content %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

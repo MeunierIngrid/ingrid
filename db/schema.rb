@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_101846) do
+ActiveRecord::Schema.define(version: 2018_09_26_172028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,13 +67,14 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "anwsers", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "choice_id"
+  create_table "answers", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.bigint "question_id"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["choice_id"], name: "index_anwsers_on_choice_id"
-    t.index ["user_id"], name: "index_anwsers_on_user_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["survey_id"], name: "index_answers_on_survey_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -83,15 +84,6 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.text "description"
     t.integer "price_cents", default: 0, null: false
     t.text "abstract"
-  end
-
-  create_table "choices", force: :cascade do |t|
-    t.bigint "question_id"
-    t.string "title"
-    t.boolean "right"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -122,17 +114,35 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
-    t.bigint "survey_id"
-    t.string "rank"
+    t.bigint "questions_category_id"
+    t.float "coefficient"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_questions_on_survey_id"
+    t.index ["questions_category_id"], name: "index_questions_on_questions_category_id"
+  end
+
+  create_table "questions_categories", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "survey_results", force: :cascade do |t|
+    t.string "title"
+    t.integer "min_value"
+    t.integer "max_value"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.string "title"
+    t.string "email"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -157,10 +167,10 @@ ActiveRecord::Schema.define(version: 2018_09_10_101846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "anwsers", "choices"
-  add_foreign_key "anwsers", "users"
-  add_foreign_key "choices", "questions"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "surveys"
   add_foreign_key "orders", "books"
   add_foreign_key "orders", "users"
-  add_foreign_key "questions", "surveys"
+  add_foreign_key "questions", "questions_categories"
+  add_foreign_key "surveys", "users"
 end
