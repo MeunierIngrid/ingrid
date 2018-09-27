@@ -2,6 +2,12 @@ class Answer < ApplicationRecord
   belongs_to :survey, inverse_of: :answers
   belongs_to :question
 
+
+  def self.filter_by_category(questions_category)
+    self.joins(:question)
+        .where(questions: {questions_category: questions_category})
+  end
+
   def self.set_scores_and_coefs
     all.joins(:question)
     .select('score, questions.coefficient as coef')

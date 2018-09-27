@@ -8,8 +8,17 @@ if Rails.env.development?
   User.create!(email: 'jonathan.serafini@gmail.com', password: 'azerty')
 end
 
+
+
 questions_categories = [
   { title: "Intrapersonnel et existentiel",
+    content: "Capacités intrapersonnelles et existentielles très fréquentes chez les HP
+Ce score correspond au pourcentage de compatibilité avec les capacités intrapersonnelle et
+existentielle des surdoués. L’intrapersonnelle c’est le développement de votre personnalité,
+votre aptitude à faire de l’introspection (qui consiste à revenir à l’intérieur de soi, à identifier
+ses sentiments, à analyser ses pensées, ses comportements et ses émotions). L’existentielle
+est votre rapport au monde et à votre existence sur terre. C’est l’aptitude à se questionner
+sur le sens et l’origine des choses et à agir en conséquence.",
     questions: [
       { title: "Depuis l'enfance je m'interroge souvent sur le sens de la vie, notre but sur terre, en tant qu'être humain", coefficient: 1 },
       { title: "J'ai besoin de donner sens à mon existence et de contribuer (à l'environnement, aux humains, aux animaux...). Cela s'exprime par un métier, l'art, la religion, du bénévolat", coefficient: 1 },
@@ -26,6 +35,12 @@ questions_categories = [
     ]
   },
   { title: "Hyperstimulabilités émotionnelle et sensorielle",
+    content: "Hyperstimulabilité émotionnelle et sensorielle très fréquentes chez les HP
+Ce score correspond au pourcentage de compatibilité avec l’hyperstimulabilité émotionnelle
+et sensorielle très développées chez les surefficients (même si elles ne se retrouvent pas
+systématiquement chez les HP). L’hyperstimulabilité. Correspond à des réactions extrêmes
+et constantes en réponse à des stimuli internes et externes. Donc à une hypersensisibilité
+émotionnelle et sensorielle.",
     questions: [
       { title: "Je suis très énergique, j'aime le mouvement, l'action. Ne rien faire m'est difficile (surtout intellectuellement)", coefficient: 1 },
       { title: "Je suis une personne impulsive", coefficient: 1 },
@@ -38,6 +53,11 @@ questions_categories = [
     ]
   },
   { title: "Processus cognitif",
+    content: "Processus cognitif très fréquents chez les HP
+Ce score correspond au pourcentage de compatibilité avec les processus mentaux mis en
+place par les surefficients. Ils permettent d'acquérir, de traiter, de raisonner, de stocker et
+d'utiliser des informations ou des connaissances. Ces particularismes sont les traits majeurs
+de la population des surefficients.",
     questions: [
       { title: "On me dit que j'ai souvent un point de vue original, à contre-courant", coefficient: 2 },
       { title: "Je suis capable de fournir un travail très intense (travailler pour 2)", coefficient: 2 },
@@ -66,6 +86,12 @@ questions_categories = [
     ]
   },
   { title: "Interpersonnel (Interaction et société)",
+    content: "Capacités interpersonnelles très fréquentes chez les HP
+Ce score correspond au pourcentage de compatibilité avec les capacités sociales des
+surdoués. Ils ont d’énormes capacités sociales qu’ils ont toutefois du mal à exprimer et à
+exploiter. Ces capacités déterminent les aptitudes sociales à comprendre les autres, à
+communiquer avec eux, à résoudre des problèmes liés à leurs relations avec les autres , à
+coopérer...",
     questions: [
       { title: "Je suis difficile à appréhender, à comprendre pour les autres", coefficient: 1 },
       { title: "J'ai le sentiment d'être bizarre ou décalé en société", coefficient: 1 },
@@ -107,7 +133,7 @@ questions_categories = [
 ]
 
 questions_categories.each do |q_category|
-  qc = QuestionsCategory.create(title: q_category[:title])
+  qc = QuestionsCategory.create(title: q_category[:title], content: q_category[:content])
   q_category[:questions].each do |q|
     qc.questions.create(q)
   end

@@ -1,59 +1,33 @@
-<h1>Surveys#show</h1>
-<p>Find me in app/views/surveys/show.html.erb</p>
+<div class="bg-marron-light">
 
-<div class="container-fluid">
-  <div class="row">
+  <div class="container text-center">
+    <div class="content p-5">
 
-    <div class="col-md-6 col-lg-4">
-      <div class="target">
-        <div class="target-chart" data-percent="42" style="background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://newmedia.thomson.co.uk/live/vol/0/921d4b57639916341dfa76e38310ff7bc13b11e2/1080x608/web/ASIAFAREASTTHAILANDTHAILANDDES_000423KHAOLAKRES_002378.jpg)">
-            <div class="target-percentage">
-              <span class="target-percentage-number"></span><sup class="target-percentage-symbol">%</sup>
-            </div>
-        </div>
-        <div class="target-infos">
-          <h3 class="target-title">Trip to Bali</h3>
-          <p class="target-savings">
-            840,00 € / 2 000,00 €
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="target">
-        <div class="target-chart" data-percent="72" style="background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://s-media-cache-ak0.pinimg.com/564x/a2/59/4d/a2594df127e9b43d6cd8b4fd8d655563.jpg)">
-            <div class="target-percentage">
-              <span class="target-percentage-number"></span><sup class="target-percentage-symbol">%</sup>
-            </div>
-        </div>
-        <div class="target-infos">
-          <h3 class="target-title">Moto repair</h3>
-          <p class="target-savings">
-            4 320,00 € / 6 000,00 €
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="target">
-        <div class="target-chart" data-percent="13" style="background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(http://www.old-computers.com/museum/photos/canon_cat_2.jpg)">
-            <div class="target-percentage">
-              <span class="target-percentage-number"></span><sup class="target-percentage-symbol">%</sup>
-            </div>
-        </div>
-        <div class="target-infos">
-          <h3 class="target-title">New computer</h3>
-          <p class="target-savings">
-            195,00 € / 1 500,00 €
-          </p>
-        </div>
-      </div>
-    </div>
+      <h1>Les résultats de votre test</h1>
 
+      <h3>vous trouverez ici des e-book sur le fonctionnement de la douance, avec des conseils et trucs et astuces</h3>
+      <%= render "shared/score_circle", radius: 300, score: @total_score  %>
+
+      <h3>Vous avez obtenu un score entre <%= @survey_result.min_value %>% et <%= @survey_result.max_value %>%</h3>
+      <p><%= @survey_result.content %></p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-marron-light">
+  <div class="container">
+    <div class="row">
+      <% QuestionsCategory.all.each do |category| %>
+        <div class="col-md-3">
+          <%= render "shared/score_circle", radius: 176, score: @survey.answers.filter_by_category(category).weighted_average.to_i  %>
+        </div>
+        <div class="col-md-9">
+          <h3><%= category.title %></h3>
+          <p><%= category.content %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
 
-<script>
-
-</script>

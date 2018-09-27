@@ -1,15 +1,11 @@
+const run = () => {
+  const circles = document.querySelectorAll('.js-circle')
+  circles.forEach((circle) => {
+    const radius = circle.getAttribute('r')
+    const val = circle.getAttribute('score')
+    const diameter = Math.round(Math.PI * radius * 2)
+    circle.style.strokeDashoffset = Math.round(1100 - diameter * val / 100)
+  })
+}
 
-
-$('.target-chart').easyPieChart({
-  animate: 1000,
-  lineWidth: 12,
-  scaleColor: false,
-  size: 300,
-  onStep: function(value) {
-      this.$el.find('.target-percentage-number').text(Math.round(value));
-  },
-  onStop: function(value, to) {
-      this.$el.find('.target-percentage-number').text(Math.round(to));
-  },
-  barColor: "#FF7826"
-});
+document.addEventListener('DOMContentLoaded', () => setTimeout(run, 10))

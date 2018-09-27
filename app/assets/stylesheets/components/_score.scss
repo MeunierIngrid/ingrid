@@ -1,0 +1,12 @@
+.score-circle {
+  stroke: #BE1621;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.score-empty {
+  stroke: #CABB9F;
+}
+
+.score-text {
+  color: black;
+}

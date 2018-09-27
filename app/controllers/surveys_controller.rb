@@ -12,8 +12,6 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
-      @total_score = @survey.total_score
-      @survey_result = @survey.survey_result(@total_score)
       # envoie du mail
       redirect_to @survey
     else
@@ -24,6 +22,9 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @survey = Survey.find(params[:id])
+    @total_score = @survey.total_score.to_i
+    @survey_result = @survey.survey_result(@total_score)
   end
 
   def update_session
