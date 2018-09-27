@@ -5,8 +5,9 @@ class Survey < ApplicationRecord
                                 reject_if: proc { |attributes| attributes[:score].blank? },
                                 allow_destroy: true
 
-  validates :email, presence: true
-  validates :email, uniqueness: true
+  validates :email, presence: { message: "Email manquant" }
+  validates :email, uniqueness: { message: "Email déjà existant" }
+  validates :answers, length: { is: Question.count, message: "Test incomplet" }
 
   def total_score
     answers.weighted_average

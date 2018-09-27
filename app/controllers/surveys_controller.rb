@@ -15,8 +15,8 @@ class SurveysController < ApplicationController
       # envoie du mail
       redirect_to @survey
     else
-      raise
       redirect_to new_survey_path
+      flash[:alert] = @survey.errors.messages.values.join(". ")
       # message
     end
   end
