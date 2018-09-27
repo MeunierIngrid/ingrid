@@ -13,11 +13,11 @@
   </div>
 </div>
 
-<div id="total-scores">
+<div id="total-scores" class="d-none d-md-block">
   <%= render "shared/total_scores_bar", total_scores: @total_scores %>
 </div>
 
-<div id="wrapper-after-progress-bar">
+<div id="wrapper-after-progress-bar d-none d-md-block">
 </div>
 <%= simple_form_for @survey do |f| %>
   <% QuestionsCategory.all.each_with_index do |questions_category, i_category| %>
