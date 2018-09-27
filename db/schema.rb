@@ -102,14 +102,14 @@ ActiveRecord::Schema.define(version: 2018_09_26_172028) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "user_id"
+    t.string "email"
     t.bigint "book_id"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
+    t.boolean "downloadable_pdf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_orders_on_book_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -170,7 +170,6 @@ ActiveRecord::Schema.define(version: 2018_09_26_172028) do
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "surveys"
   add_foreign_key "orders", "books"
-  add_foreign_key "orders", "users"
   add_foreign_key "questions", "questions_categories"
   add_foreign_key "surveys", "users"
 end

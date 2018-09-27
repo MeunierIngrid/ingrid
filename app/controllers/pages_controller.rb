@@ -12,4 +12,8 @@ class PagesController < ApplicationController
 
   def ressources
   end
+
+  def legal_notice
+  end
+
 end

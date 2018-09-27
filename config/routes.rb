@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/ressources', to: "pages#ressources"
   get 'quizz-informations', to: 'pages#survey', as: 'quizz_informations'
   get '/surveys/session', to: "surveys#update_session", as: 'session_survey'
+  get '/mentions-legales', to: "pages#legal_notice", as: 'legal_notice'
 
   resources :surveys, only: [:new, :create, :show]
   resources :books, only: [:index, :show] do
