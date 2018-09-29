@@ -6,4 +6,8 @@ class Order < ApplicationRecord
   def downloadable_pdf?
     downloadable_pdf
   end
+
+  def download_pdf_done!
+    update(downloadable_pdf: false)
+  end
 end
