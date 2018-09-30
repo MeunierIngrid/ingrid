@@ -1,5 +1,3 @@
-require "open-uri"
-
 class OrdersController < ApplicationController
   skip_before_action :authenticate_user!
 
