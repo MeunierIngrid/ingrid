@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Ingrid
   class Application < Rails::Application
+    config.active_job.queue_adapter = :sidekiq
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )

@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <%= render "shared/card_inline",
-           image_path: url_for(book.cover),
+           image_path: display_cover(book),
            title: book.title,
            author: "Ingrid Meunier",
            price: book.price,

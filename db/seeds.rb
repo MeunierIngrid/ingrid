@@ -5,7 +5,7 @@ QuestionsCategory.destroy_all
 SurveyResult.destroy_all
 
 if Rails.env.development?
-  User.create!(email: 'jonathan.serafini@gmail.com', password: 'azerty')
+  User.create!(email: 'jonathan.serafini@gmail.com', password: 'azerty', admin: true)
 end
 
 

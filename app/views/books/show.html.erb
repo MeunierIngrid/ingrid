@@ -4,7 +4,8 @@
         <div class="col-md-4">
           <div class="d-flex justify-content-center">
             <div class="book-card">
-              <%= image_tag @book.cover, class: "book-card-img" %>
+
+              <%= image_tag display_cover(@book), class: "book-card-img" %>
               <div class="book-card-content d-flex justify-content-between flex-column">
                 <div class="book-card-title text-center"><%= @book.price %>€</div>
                 <div class="text-center">
