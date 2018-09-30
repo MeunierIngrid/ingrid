@@ -25,8 +25,7 @@ class OrdersController < ApplicationController
       payment: charge.to_json,
       email: customer.email,
       book: @book,
-      amount: @book.price,
-      downloadable_pdf: true
+      amount: @book.price
     )
 
     OrderMailer.download_pdf(@order.id, @book.id).deliver_later
