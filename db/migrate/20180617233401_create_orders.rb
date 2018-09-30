@@ -5,7 +5,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.references :book, foreign_key: true
       t.monetize :amount, currency: { present: false }
       t.jsonb :payment
-      t.boolean :downloadable_pdf
 
 
       t.timestamps

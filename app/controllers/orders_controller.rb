@@ -28,25 +28,14 @@ class OrdersController < ApplicationController
       amount: @book.price,
       downloadable_pdf: true
     )
-    @order.pdf.attach( io: open("https://res.cloudinary.com/#{ENV['CLOUDINARY_CLOUD_NAME']}/image/upload/#{@book.pdf.key}"), filename: 'book.pdf' )
+
+    OrderMailer.download_pdf(@order.id, @book.id).deliver_later
 
     redirect_to @order
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to @book
-  end
-
-  def download_pdf
-    @order = Order.find(params[:id])
-    if @order.downloadable_pdf?
-      redirect_to "http://res.cloudinary.com/#{ENV['CLOUDINARY_CLOUD_NAME']}/image/upload/fl_attachment/#{@order.pdf.key}"
-      # @order.pdf.purge
-      @order.download_pdf_done!
-    else
-      redirect_to root_path
-      flash[:alert] = "Ce lien n'est plus valide!"
-    end
   end
 end
 
