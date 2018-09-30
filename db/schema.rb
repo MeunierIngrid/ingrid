@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(version: 2018_09_26_172028) do
     t.bigint "book_id"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
-    t.boolean "downloadable_pdf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_orders_on_book_id"
