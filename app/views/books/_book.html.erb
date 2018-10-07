@@ -1,10 +1,15 @@
 <div class="col-12 col-md-4">
   <div class="d-flex justify-content-center">
     <div class="book-card">
-      <%= image_tag display_cover(book), class: "book-card-img" %>
+      <div class="position-relative book-wrapper">
+        <%= image_tag display_cover(book), class: "book-card-img" %>
+        <div class="book-hover d-none">
+          <%= book.abstract %>
+        </div>
+      </div>
       <div class="book-card-content">
         <div class="book-card-title text-center">
-          <%= book.title %> azer zertyu z"'(§è! "'()
+          <%= book.title %>
           <br>
           <%= book.price %>€</div>
         <div class="text-center">
@@ -15,6 +20,3 @@
   </div>
 </div>
 
-
-
-<!-- abstract: book.abstract, -->

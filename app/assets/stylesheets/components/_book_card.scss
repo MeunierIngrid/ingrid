@@ -11,6 +11,17 @@
     // background-size: cover !important;
     width: 100%;
   }
+  .book-hover {
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
   .book-card-content {
     // position: relative;
     // padding: 0px 20px 25px 20px;

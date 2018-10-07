@@ -7,8 +7,6 @@ $(document).ready(function(){
   });
 });
 
-
-
 const collapses = document.querySelectorAll(".my-collapse");
 collapses.forEach((collapse) => {
   collapse.addEventListener("mouseenter", (e)=> {
@@ -21,6 +19,17 @@ collapses.forEach((collapse) => {
   });
 });
 
+const bookWrappers = document.querySelectorAll(".book-wrapper");
+bookWrappers.forEach((bookWrapper) => {
+  bookWrapper.addEventListener("mouseenter", (e)=> {
+    const hover = e.currentTarget.querySelector(".book-hover");
+    hover.classList.remove("d-none");
+  });
+  bookWrapper.addEventListener("mouseleave", (e)=> {
+    const hover = e.currentTarget.querySelector(".book-hover");
+    hover.classList.add("d-none");
+  });
+});
 
 
 // ############ survey#new
