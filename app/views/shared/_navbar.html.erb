@@ -15,15 +15,15 @@
       <%= link_to "Qui suis-je ?", biography_path, class: "navbar-wagon-item navbar-wagon-link"  %>
       <%= link_to "Contact", new_contact_path(anchor: "contact"), class: "navbar-wagon-item navbar-wagon-link"  %>
       <%= link_to "Les ressources", ressources_path, class: "navbar-wagon-item navbar-wagon-link"  %>
-      <% if current_user %>
-        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-      <% else %>
+<!--       <%# if current_user %>
+        <%#= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%# else %>
         <div class="navbar-wagon-item">
-          <%= link_to "Se connecter", new_user_session_path, class: "px-0 navbar-wagon-item navbar-wagon-link" %>
+          <%#= link_to "Se connecter", new_user_session_path, class: "px-0 navbar-wagon-item navbar-wagon-link" %>
           /
-          <%= link_to "S'inscricre", new_user_registration_path, class: "px-0 navbar-wagon-link" %>
+          <%#= link_to "S'inscricre", new_user_registration_path, class: "px-0 navbar-wagon-link" %>
         </div>
-      <% end %>
+      <%# end %> -->
     </div>
   </div>
   <!-- Dropdown appearing on mobile only -->
@@ -36,15 +36,15 @@
         <%= link_to "Qui suis-je ?", biography_path, class: "dropdown-item"  %>
         <%= link_to "Contact", new_contact_path, class: "dropdown-item"  %>
         <%= link_to "Les ressources", ressources_path, class: "dropdown-item"  %>
-        <% if current_user %>
-          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-        <% else %>
+<!--         <%# if current_user %>
+          <%#= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%# else %>
           <div class="navbar-wagon-item">
-            <%= link_to "Se connecter", new_user_session_path, class: "px-0 navbar-wagon-item navbar-wagon-link" %>
+            <%#= link_to "Se connecter", new_user_session_path, class: "px-0 navbar-wagon-item navbar-wagon-link" %>
             /
-            <%= link_to "S'inscricre", new_user_session_path, class: "px-0 navbar-wagon-link" %>
+            <%#= link_to "S'inscricre", new_user_session_path, class: "px-0 navbar-wagon-link" %>
           </div>
-        <% end %>
+        <%# end %> -->
       </div>
     </div>
   </div>
