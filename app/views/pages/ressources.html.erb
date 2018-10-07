@@ -5,9 +5,7 @@
       <h1>Les Ressources</h1>
 
 
-      <%= render "shared/quote", content: "Il n'est jamais trop tard pour être ce que vous auriez pu être !", author: "George Eliot" %>
-
-      <h2>The must read</h2>
+      <h2>Les must read</h2>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -74,7 +72,7 @@
         </div>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-12" id="audrey-bouquet" >
         <div class="border border-dark d-flex justify-content-between flex-wrap p-4 mb-4">
           <div>
             <%= image_tag "ressources/a-la-rencontre.png", class: "img-thumbnail m-x-5 w-200px" %>
@@ -83,7 +81,7 @@
             <h3>A la rencontre de mes semblables à rayures</h3>
             <p>de <b>Audrey Bouquet</b></p>
 
-            <p>Suite à la découverte de sa douance, Audrey a pris la route avec son camping car pour aller à la rencontre de se semblables, à savoir les surdoués. Elle a recueillé témoignages et vécus de chacun et en a fait un livre. Les 9 "témoignages" de la page "Suis-je concerné?" en sont extraits.</p>
+            <p>Suite à la découverte de sa douance, Audrey a pris la route avec son camping car pour aller à la rencontre de ses semblables, à savoir les surdoués. Elle a recueilli témoignages et vécus de chacun et en a fait un livre. Les 9 "témoignages" de la page d'accueil en sont des extraits.</p>
           </div>
         </div>
       </div>
@@ -92,14 +90,14 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "On ne devient pas normal impunément.",
+                                content: "Emile Cioran, Philosophe"  %>
 
 
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
     <div class="content p-5">
-      <h2>The must see</h2>
+      <h2>Les must see</h2>
       <div class="mb-5">
         <iframe width="600" height="400" src="https://www.youtube.com/embed/ZMBsJdNuxFg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <h3>Jeanne Siau Facchin</h3>
@@ -121,19 +119,19 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "Soyez le changement que vous voulez voir dans le monde.",
+                                content: "Gandhi, dirigeant politique pacifiste"  %>
 
 
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
     <div class="content p-5">
       <h2>Les sites/blogs qui valent le détour</h2>
-      <%= link_to "http://les-tribulations-dun-petit-zebre.com/", class: "mb-5 btn" do %>
+      <%= link_to "http://les-tribulations-dun-petit-zebre.com/", target: "_blank", class: "mb-5 btn" do %>
         <%= image_tag "ressources/blog1.png", class: "max-w-600px" %>
         <h3>Les Tribulations d’un petit zèbre: blog mine d’information</h3>
       <% end %>
-      <%= link_to "http://www.talentdifferent.com/", class: "mb-5 btn" do %>
+      <%= link_to "http://www.talentdifferent.com/", target: "_blank", class: "mb-5 btn" do %>
         <%= image_tag "ressources/blog2.png", class: "max-w-600px" %>
         <h3>Talent différent : blog exaustif</h3>
       <% end %>

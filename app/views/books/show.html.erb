@@ -8,23 +8,26 @@
               <%= image_tag display_cover(@book), class: "book-card-img" %>
               <div class="book-card-content d-flex justify-content-between flex-column">
                 <div class="book-card-title text-center"><%= @book.price %>€</div>
-                <div class="text-center">
+                <label class="text-center">
+                  <span class="btn-red">Acheter</span>
                   <%#= link_to "Commander", @book, class: "btn-red" %>
-                  <%= form_tag book_orders_path(@book) do %>
-                  <!--   <article>
-                      <label class="amount">
-                        <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
-                      </label>
-                    </article> -->
-                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-name="<%= Book %>"
-                      data-description="Book <%= @book.title %>"
-                      data-amount="<%= @book.price_cents %>"
-                      data-currency="<%= @book.price.currency %>">
-                    </script>
+                  <div class="d-none">
+                    <%= form_tag book_orders_path(@book) do %>
+                    <!--   <article>
+                        <label class="amount">
+                          <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
+                        </label>
+                      </article> -->
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-name="<%= Book %>"
+                        data-description="Book <%= @book.title %>"
+                        data-amount="<%= @book.price_cents %>"
+                        data-currency="<%= @book.price.currency %>">
+                      </script>
+                    </div>
                   <% end %>
-                </div>
+                </label>
               </div>
             </div>
           </div>

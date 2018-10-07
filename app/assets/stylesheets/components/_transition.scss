@@ -1,11 +1,14 @@
 .transition {
   color: white;
-  height: 50vh;
+  height: 30vh;
   background-size: cover !important;
   background-position: center;
   background-attachment: fixed;
+  p {
+    font-size: 1.5rem;
+  }
   h2 {
     color: white;
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 }

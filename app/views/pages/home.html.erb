@@ -12,12 +12,12 @@
   <div class="container">
     <div class="row text-center p-5">
       <p>
-        Au travers de mon site, je tente d'offrir de façon exhaustive et synthétique les réponses aux questions inhérentes à la découverte de la <b>douance adulte</b> pour devenir un <b>"surdoué décomplexé"</b>.
-        <br>
+<!--         Au travers de mon site, je tente d'offrir de façon exhaustive et synthétique les réponses aux questions inhérentes à la découverte de la <b>douance adulte</b> pour devenir un <b>"surdoué décomplexé"</b>.
+        <br> -->
         Pourquoi décomplexé? Car <b>être surdoué n'est ni honteux, ni une insulte, ni de l'orgueil mal placé</b>. Etre surdoué est une <b>chance</b> quand on sait l'exploiter.
       </p>
       <p>
-        Forte de mes <b>14 ans d'expérience dans l'accompagnement du haut potentiel</b> (bénévole et professionnelle) je souhaite mettre <b>mon expertise</b> à votre service.
+        Forte de mes <b>14 ans d'expérience dans l'accompagnement du haut potentiel</b> (bénévole et professionnelle) je souhaite mettre <b>mon expertise de psychothérapeute</b> à votre service.
       </p>
     </div>
   </div>
@@ -31,8 +31,11 @@
         </div>
         <div class="back">
           <div class="box2">
-            <h2>Titre</h2>
-            <p>Back Side</p>
+            <h2>Suis-je concerné ?</h2>
+            <p>Vous trouverez ici des informations concernant la douance, les tests de QI et les diagnostics, des témoignages ainsi qu'un questionnaire de 73 questions</p>
+            <br>
+            <%= link_to "Le questionnaire", quizz_informations_path, class: "btn-red" %>
+
           </div>
         </div>
       </div>
@@ -47,8 +50,10 @@
         </div>
         <div class="back">
           <div class="box2">
-            <h2>Titre</h2>
-            <p>Back Side</p>
+            <h2>Je souhaite comprendre</h2>
+            <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
+            <br>
+            <%= link_to "Les ebooks", books_path, class: "btn-red" %>
           </div>
         </div>
       </div>
@@ -63,8 +68,10 @@
         </div>
         <div class="back">
           <div class="box2">
-            <h2>Titre</h2>
-            <p>Back Side</p>
+            <h2>Je souhaite en discuter</h2>
+            <p>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</p>
+            <br>
+            <%= link_to "Contact", new_contact_path, class: "btn-red" %>
           </div>
         </div>
       </div>
@@ -73,8 +80,8 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/meeting.jpg",
-                                title: "Suis-je concerné ?",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "Il n'est jamais trop tard pour etre ce que vous auriez pu être.",
+                                content: "George Eliot, romancière"  %>
 
 
 <div class="wrapper text-center bg-marron-light">
@@ -91,35 +98,40 @@
     <div class="row">
       <div class="col-md-5">
         <h2>Comment ?</h2>
-        <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
-          <i class="d-flex align-items-center justify-content-center fas fa-question"></i>
-          <div class="title d-flex align-items-center justify-content-center"><div>Le site et le questionnaire</div></div>
-        </a>
 
-        <div class="collapse" id="collapse1">
-          <div class="card card-body">
+
+        <div class="my-collapse">
+          <div class="btn-item bg-green d-flex justify-content-between m-2">
+            <i class="d-flex align-items-center justify-content-center fas fa-question"></i>
+            <div class="title d-flex align-items-center justify-content-center">
+              <div>
+                Le site et le questionnaire
+              </div>
+            </div>
+          </div>
+          <div class="card card-body d-none">
             Un QUESTIONNAIRE qui permet d'avoir une premiere approche personnelle de son éventuel surdon ainsi que des EXPLICATIONS.
           </div>
         </div>
 
-        <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
-          <i class="d-flex align-items-center justify-content-center fas fa-book"></i>
-          <div class="title d-flex align-items-center justify-content-center"><div>Les ebooks</div></div>
-        </a>
+        <div class="my-collapse">
+          <div class="btn-item bg-blue d-flex justify-content-between m-2">
+            <i class="d-flex align-items-center justify-content-center fas fa-book"></i>
+            <div class="title d-flex align-items-center justify-content-center"><div>Les ebooks</div></div>
+          </div>
 
-        <div class="collapse" id="collapse2">
-          <div class="card card-body">
+          <div class="card card-body d-none">
             Des E-BOOKS qui reprennent tous les éléments "essentiels" que je fournis lors de mes consultations.
           </div>
         </div>
 
-        <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapse3">
-          <i class="d-flex align-items-center justify-content-center fas fa-video"></i>
-          <div class="title d-flex align-items-center justify-content-center"><div>Les visiodiscutions</div></div>
-        </a>
+        <div class="my-collapse"">
+          <div class="btn-item bg-orange d-flex justify-content-between m-2">
+            <i class="d-flex align-items-center justify-content-center fas fa-video"></i>
+            <div class="title d-flex align-items-center justify-content-center"><div>Les visiodiscutions</div></div>
+          </div>
 
-        <div class="collapse" id="collapse3">
-          <div class="card card-body">
+          <div class="card card-body d-none">
             Des VISIODISCUTIONS pour me parler qui répondent aux questions de façon personnalisée.
           </div>
         </div>
@@ -130,41 +142,42 @@
       </div>
       <div class="col-md-5">
         <h2>Quoi ?</h2>
-        <a class="btn-item bg-green d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapse4">
-          <div class="title d-flex align-items-center justify-content-center">
-            <div>Informations sur les surdoués</div>
-          </div>
-          <i class="d-flex align-items-center justify-content-center fas fa-info"></i>
-        </a>
 
-        <div class="collapse" id="collapse4">
-          <div class="card card-body">
+        <div class="my-collapse">
+          <div class="btn-item bg-green d-flex justify-content-between m-2">
+            <div class="title d-flex align-items-center justify-content-center">
+              <div>Informations sur les surdoués</div>
+            </div>
+            <i class="d-flex align-items-center justify-content-center fas fa-info"></i>
+          </div>
+
+          <div class="card card-body d-none">
             Des INFORMATIONS sur le fonctionnement des surdoués, des normaux pensants et du monde.
           </div>
         </div>
 
-        <a class="btn-item bg-blue d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse5" role="button" aria-expanded="false" aria-controls="collapse5">
-          <div class="title d-flex align-items-center justify-content-center">
-            <div>Solutions, trucs et astuces</div>
+        <div class="my-collapse">
+          <div class="btn-item bg-blue d-flex justify-content-between m-2">
+            <div class="title d-flex align-items-center justify-content-center">
+              <div>Solutions, trucs et astuces</div>
+            </div>
+            <i class="d-flex align-items-center justify-content-center far fa-lightbulb"></i>
           </div>
-          <i class="d-flex align-items-center justify-content-center far fa-lightbulb"></i>
-        </a>
 
-        <div class="collapse" id="collapse5">
-          <div class="card card-body">
+          <div class="card card-body d-none">
             Des SOLUTIONS, des TRUCS ET ASTUCES, du concret à mettre en place.
           </div>
         </div>
 
-        <a class="btn-item bg-orange d-flex justify-content-between m-2" data-toggle="collapse" href="#collapse6" role="button" aria-expanded="false" aria-controls="collapse6">
-          <div class="title d-flex align-items-center justify-content-center">
-            <div>Une écoute éclairée</div>
+        <div class="my-collapse">
+          <div class="btn-item bg-orange d-flex justify-content-between m-2">
+            <div class="title d-flex align-items-center justify-content-center">
+              <div>Une écoute éclairée</div>
+            </div>
+            <i class="d-flex align-items-center justify-content-center far fa-comments"></i>
           </div>
-          <i class="d-flex align-items-center justify-content-center far fa-comments"></i>
-        </a>
 
-        <div class="collapse" id="collapse6">
-          <div class="card card-body">
+          <div class="card card-body d-none">
             Une ECOUTE éclairée et professionnelle.
           </div>
         </div>
@@ -174,8 +187,8 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "Un surdoué ne se sent ni doué, ni sûr",
+                                content: ""  %>
 
 
 <div class="wrapper bg-marron-light text-center">
@@ -191,7 +204,7 @@
       <p>Le haut potentiel n'est qu'un <b>mode de fonctionnement neuronale atypique</b> qu'il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu'un gadget High Tech que l'on apprend à manipuler et à optimiser grâce à la notice.</p>
 
       <p>
-        J'ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu'un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues…
+        J'ai pris le partie de me focaliser <b>uniquement sur le prisme du haut potentiel</b>. Et donc de ne travailler que sur les particularisme de la douance. Cependant, sachant qu'un surdoué peut avoir, comme tout un chacun, des névroses, il pourra bien sûr envisager à sa convenance de les traiter avec mes collègues.
       </p>
     </div>
 
@@ -205,15 +218,15 @@
       </div>
     </div> -->
     <div class="d-none d-md-block">
-      <%= image_tag "calvin.png" %>
+      <%= image_tag "calvin.png", class: "max-w-600px" %>
     </div>
 
   </div>
 </div>
 
 <%= render "shared/transition", image_path: "transitions/form.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "Il n'y a pas plus grande joie que de de connaître quelqu'un qui voit le même monde que nous, c'est apprendre que l'on était pas fou.",
+                                content: "Christian Bobin"  %>
 
 
 <div class="wrapper text-center bg-marron-light">
@@ -221,7 +234,9 @@
     <div class="content p-5">
       <h2>Ca me parle</h2>
       <p>
-        <b>Témoignages issus du livre de Audrey Bouquet "À la rencontre de mes semblables à rayures"</b>
+        <b>Témoignages issus du livre de Audrey Bouquet
+        "<%= link_to "À la rencontre de mes semblables à rayures", ressources_path(anchor: "audrey-bouquet") %>"
+        </b>
       </p>
 
       <div class="d-none d-md-block">

@@ -11,7 +11,7 @@ class OrderMailer < ApplicationMailer
     @order = Order.find(order_id)
     @book = Book.find(book_id)
 
-    attachments["#{@book.title}.pdf"] = open("https://res.cloudinary.com/#{ENV['CLOUDINARY_CLOUD_NAME']}/image/upload/#{@book.pdf.key}").read
+    attachments["#{@book.title}.pdf"] = open("https://res.cloudinary.com/#{ENV['CLOUDINARY_CLOUD_NAME']}/image/upload/l_text:Arial_100:#{@order.email}/#{@book.pdf.key}").read
     mail(to: @order.email, subject: 'Votre commande ebook')
   end
 end
