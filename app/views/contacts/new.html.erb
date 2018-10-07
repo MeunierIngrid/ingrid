@@ -8,13 +8,13 @@
 
       <h2>Consultations en appel vidéo</h2>
 
-      <p>Etant contacté par des personnes venant de la France entière et souhaitant dématérialiser mon travail pour plus de souplesse, j’ai pris le parti de ne désormais consulter que par appel vidéo et de ne plus avoir de cabinet fixe. Je pratique des consultations à distance depuis plusieurs années maintenant et cela fonctionne très bien.</p>
+      <p>Etant contacté par des personnes venant de la France entière et souhaitant dématérialiser mon travail pour plus de souplesse, j'ai pris le parti de ne désormais consulter que par appel vidéo et de ne plus avoir de cabinet fixe. Je pratique des consultations à distance depuis plusieurs années maintenant et cela fonctionne très bien.</p>
 
       <div class="pricing m-5 p-5">
         <h2>Tarifs de consultation</h2>
         <p>
-          La consultation dure soit <span>1h</span>, soit 1h30 et est à <span>70€</span> de l’heure (100€ pour 1h30) à raison de 2 à 3 consultations par mois.
-          Ce montant sera à payer en avance (au plus tard 24h à l’avance) pour que je puisse vous assurer le créneau.
+          La consultation dure soit <span>1h</span>, soit 1h30 et est à <span>70€</span> de l'heure (100€ pour 1h30) à raison de 2 à 3 consultations par mois.
+          Ce montant sera à payer en avance (au plus tard 24h à l'avance) pour que je puisse vous assurer le créneau.
         </p>
       </div>
     </div>
@@ -22,8 +22,8 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "La spéculation est un luxe. Tandis que l'action est une nécessité.",
+                                content: "Bergson, philosophe"  %>
 
 
 <div class="wrapper text-center bg-marron-light">
@@ -86,8 +86,8 @@
 </div>
 
 <%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Je souhaite comprendre",
-                                content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque mollitia velit,. "  %>
+                                title: "Ce qui tourmente les hommes, ce n'est pas la réalité mais les opinions qu'ils s'en font.",
+                                content: "Epictète, Philosophe"  %>
 
 
 <div id="contact"></div>
@@ -148,14 +148,14 @@
                       ],
                       as: :radio_buttons, label: "Prendre rendez-vous" %>
         </div>
-        <div class="col-md-6">
+<!--         <div class="col-md-6">
           <div class="d-flex justify_content-center">
             <p class="p-2">Si "Autre", précider : </p>
             <div class="flex-1-auto">
-              <%= f.input :rdv_other, label: false %>
+              <%#= f.input :rdv_other, label: false %>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-12">
           <%= f.input :informations, label: "Pour vous demander des renseignements :" %>
         </div>
@@ -167,7 +167,7 @@
         </div>
 
         <div class="text-center w-100">
-          <%= f.button :submit, class: "btn btn-red" %>
+          <%= f.button :submit, "Envoyer", class: "btn btn-red" %>
         </div>
       </div>
     </div>

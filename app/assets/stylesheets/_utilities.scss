@@ -13,12 +13,16 @@ body {
   font-size: 20px;
 }
 
+.bottom-100px {
+  bottom: 100px;
+}
+
 .bg-marron-dark {
   background-color: #CABB9F;
 }
 
 .bg-marron-light {
-  background-color: #FFFBF3;
+  background-color: $marron-light;
 }
 
 .bg-blue {
@@ -59,7 +63,7 @@ body {
 }
 
 a:hover {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
@@ -99,7 +103,7 @@ a:hover {
 /*-=-=-=-=-=-=-=-=-=-=- */
 
 .wrapper {
-  border-bottom: 4px solid #CABB9F;
+  border-bottom: 7px solid #CABB9F;
   padding: 40px 0px;
   min-height: calc(100vh - 170px);
 }
@@ -113,7 +117,7 @@ a:hover {
 
 .panel {
   margin: 0 auto;
-  height: 220px;
+  height: 300px;
   position: relative;
   -webkit-perspective: 600px;
   -moz-perspective: 600px;
@@ -174,7 +178,7 @@ a:hover {
 }
 .box1{
   width: 100%;
-  height: 220px;
+  height: 300px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 3px;
@@ -189,7 +193,7 @@ a:hover {
 .box2{
   background-color: white;
   width: 100%;
-  height: 220px;
+  height: 300px;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 2px 2px 20px grey;
@@ -239,7 +243,7 @@ a:hover {
 }
 
 .btn-small-marron-light {
-  background-color: #FFFBF3;
+  background-color: $marron-light;
   color: black;
   padding: 10px;
   border-radius: 3px;

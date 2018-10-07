@@ -1,10 +1,20 @@
-<div class="col-md-12">
-  <%= render "shared/card_inline",
-           image_path: display_cover(book),
-           title: book.title,
-           author: "Ingrid Meunier",
-           price: book.price,
-           abstract: book.abstract,
-           link_name: "Commander",
-           link_path: book_path(book) %>
+<div class="col-12 col-md-4">
+  <div class="d-flex justify-content-center">
+    <div class="book-card">
+      <%= image_tag display_cover(book), class: "book-card-img" %>
+      <div class="book-card-content">
+        <div class="book-card-title text-center">
+          <%= book.title %> azer zertyu z"'(§è! "'()
+          <br>
+          <%= book.price %>€</div>
+        <div class="text-center">
+          <%= link_to "Commander", book, class: "btn-red" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+<!-- abstract: book.abstract, -->

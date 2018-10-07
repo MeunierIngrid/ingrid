@@ -7,6 +7,22 @@ $(document).ready(function(){
   });
 });
 
+
+
+const collapses = document.querySelectorAll(".my-collapse");
+collapses.forEach((collapse) => {
+  collapse.addEventListener("mouseenter", (e)=> {
+    const card = e.currentTarget.querySelector(".card");
+    card.classList.remove("d-none");
+  });
+  collapse.addEventListener("mouseleave", (e)=> {
+    const card = e.currentTarget.querySelector(".card");
+    card.classList.add("d-none");
+  });
+});
+
+
+
 // ############ survey#new
 
 // ajax radio_buton
@@ -20,7 +36,7 @@ radios.forEach((radio)=>{
   });
 });
 
-// sroll progress bar
+// scroll progress bar
 $(document).on('scroll',function(){
   if ($(document).scrollTop() > 330) {
    $('#total-scores').addClass('fixed')
@@ -28,6 +44,15 @@ $(document).on('scroll',function(){
   } else {
    $('#total-scores').removeClass('fixed')
    $('#wrapper-after-progress-bar').removeClass('margin-for-progress-bar-fixed')
+  }
+});
+
+// scroll progress bar
+$(document).on('scroll',function(){
+  if ($(document).scrollTop() > ($(document).height()- $(window).height() - 100)) {
+   $('#btn-survey').addClass('bottom-100px')
+  } else {
+   $('#btn-survey').removeClass('bottom-100px')
   }
 });
 
