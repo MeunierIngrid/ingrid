@@ -12,6 +12,7 @@ end
 
 questions_categories = [
   { title: "Intrapersonnel et existentiel",
+    visible: true,
     content: "Capacités intrapersonnelles et existentielles très fréquentes chez les HP
 Ce score correspond au pourcentage de compatibilité avec les capacités intrapersonnelle et
 existentielle des surdoués. L’intrapersonnelle c’est le développement de votre personnalité,
@@ -35,6 +36,7 @@ sur le sens et l’origine des choses et à agir en conséquence.",
     ]
   },
   { title: "Hyperstimulabilités émotionnelle et sensorielle",
+    visible: true,
     content: "Hyperstimulabilité émotionnelle et sensorielle très fréquentes chez les HP
 Ce score correspond au pourcentage de compatibilité avec l’hyperstimulabilité émotionnelle
 et sensorielle très développées chez les surefficients (même si elles ne se retrouvent pas
@@ -53,6 +55,7 @@ et constantes en réponse à des stimuli internes et externes. Donc à une hyper
     ]
   },
   { title: "Processus cognitif",
+    visible: true,
     content: "Processus cognitif très fréquents chez les HP
 Ce score correspond au pourcentage de compatibilité avec les processus mentaux mis en
 place par les surefficients. Ils permettent d'acquérir, de traiter, de raisonner, de stocker et
@@ -86,6 +89,7 @@ de la population des surefficients.",
     ]
   },
   { title: "Interpersonnel (Interaction et société)",
+    visible: true,
     content: "Capacités interpersonnelles très fréquentes chez les HP
 Ce score correspond au pourcentage de compatibilité avec les capacités sociales des
 surdoués. Ils ont d’énormes capacités sociales qu’ils ont toutefois du mal à exprimer et à
@@ -114,6 +118,7 @@ coopérer...",
     ]
   },
   { title: "Enfance",
+    visible: false,
     questions: [
       { title: "J'avais une grande curiosité intellectuelle, voulant toujours comprendre le comment du pourquoi", coefficient: 0 },
       { title: "J'étais réfractaire à l'entraînement et à l'exercice répétitif", coefficient: 0 },
