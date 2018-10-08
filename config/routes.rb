@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   get 'orders/:id/download_pdf', to: "orders#download_pdf", as: 'download_pdf'
 
-  resources :surveys, only: [:new, :create, :show]
+  resources :surveys, only: [:new, :create]
+  get '/surveys/:token', to: "surveys#show", as: 'survey'
   resources :books, only: [:index, :show] do
     resources :orders, only: [:show, :create], shallow: true
   end

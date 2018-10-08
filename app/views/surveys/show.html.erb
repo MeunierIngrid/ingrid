@@ -31,7 +31,7 @@
 <div class="bg-marron-light">
   <div class="container">
     <div class="row">
-      <% QuestionsCategory.all.each do |category| %>
+      <% QuestionsCategory.visibles.each do |category| %>
         <div class="col-md-3 text-center">
           <%= render "shared/score_circle", radius: 176, score: @survey.answers.filter_by_category(category).weighted_average.to_i  %>
         </div>

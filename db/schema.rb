@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_172028) do
+ActiveRecord::Schema.define(version: 2018_10_08_002148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_172028) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "visible"
   end
 
   create_table "survey_results", force: :cascade do |t|
@@ -141,6 +142,7 @@ ActiveRecord::Schema.define(version: 2018_09_26_172028) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 

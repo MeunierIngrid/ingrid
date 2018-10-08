@@ -13,7 +13,7 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
     if @survey.save
       # envoie du mail
-      redirect_to @survey
+      redirect_to survey_path(@survey.token)
     else
       redirect_to new_survey_path
       flash[:alert] = @survey.errors.messages.values.join(". ")
@@ -22,7 +22,7 @@ class SurveysController < ApplicationController
   end
 
   def show
-    @survey = Survey.find(params[:id])
+    @survey = Survey.find_by(token: params[:token])
     @total_score = @survey.total_score.to_i
     @survey_result = @survey.survey_result(@total_score)
   end

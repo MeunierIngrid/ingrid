@@ -6,6 +6,22 @@
 
       <h3>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</h3>
 
+      <h2>Liste des e-books disponibles</h2>
+    </div>
+    <div class="row">
+      <%= render @books %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/transition", image_path: "transitions/book.jpg",
+                                title: "Il faut se ressembler un peu pour se comprendre, mais il faut être un peu différents pour s'aimer.",
+                                content: "Paul Geraldy, poète et dramaturge"  %>
+
+<div class="wrapper text-center bg-marron-light">
+  <div class="container">
+    <div class="content p-5">
+
       <h2>Pourquoi des e-books ?</h2>
 
 
@@ -50,22 +66,9 @@
 
 
 
-<%= render "shared/transition", image_path: "transitions/book.jpg",
-                                title: "Il faut se ressembler un peu pour se comprendre, mais il faut être un peu différents pour s'aimer.",
-                                content: "Paul Geraldy, poète et dramaturge"  %>
 
 
 
-<div class="wrapper text-center bg-marron-light">
-  <div class="container">
-    <div class="content p-5">
-      <h2>Liste des e-books disponibles</h2>
-    </div>
-    <div class="row">
-      <%= render @books %>
-    </div>
-  </div>
-</div>
 
 
 
