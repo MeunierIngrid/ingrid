@@ -21,11 +21,13 @@
       </p>
     </div>
   </div>
-  <div class="wrapper-grid">
-    <div class="col_third">
+
+
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4">
       <div class="hover panel d-flex justify-content-center">
         <div class="front">
-          <div class="box1 d-flex align-items-end">
+          <div class="box1 d-flex align-items-center">
             <%= image_tag "pictos1.png" %>
           </div>
         </div>
@@ -41,10 +43,10 @@
       </div>
     </div>
 
-    <div class="col_third">
+    <div class="col-12 col-sm-6 col-md-4">
       <div class="hover panel d-flex justify-content-center">
         <div class="front">
-          <div class="box1 d-flex align-items-end">
+          <div class="box1 d-flex align-items-center">
             <%= image_tag "pictos2.png" %>
           </div>
         </div>
@@ -59,10 +61,10 @@
       </div>
     </div>
 
-    <div class="col_third end">
+    <div class="col-12 col-sm-6 col-md-4">
       <div class="hover panel d-flex justify-content-center">
         <div class="front">
-          <div class="box1 d-flex align-items-end">
+          <div class="box1 d-flex align-items-center">
             <%= image_tag "pictos3.png" %>
           </div>
         </div>
@@ -138,7 +140,7 @@
 
       </div>
       <div class="col-md-2">
-        <%= image_tag "target.png", class: "target" %>
+        <%= image_tag "target.png", class: "target max-w-150px" %>
       </div>
       <div class="col-md-5">
         <h2>Quoi ?</h2>
@@ -198,7 +200,11 @@
       <p><b>Etre surdoué n'est ni une névrose, ni une pathologie. Il n'y a donc pas lieu d'engager une thérapie pour cela.</b></p>
 
       <div class="d-none d-md-block">
-        <%= image_tag "nevroses.png", class: "width-100" %>
+        <%= image_tag "nevroses.png", class: "w-100" %>
+      </div>
+
+      <div class="d-md-none">
+        <%= image_tag "nevroses-crop.png", class: "w-100" %>
       </div>
 
       <p>Le haut potentiel n'est qu'un <b>mode de fonctionnement neuronale atypique</b> qu'il faut savoir <b>appréhender, apprivoiser et utiliser à son avantage</b>. Au meme titre qu'un gadget High Tech que l'on apprend à manipuler et à optimiser grâce à la notice.</p>
