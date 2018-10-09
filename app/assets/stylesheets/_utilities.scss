@@ -13,6 +13,10 @@ body {
   font-size: 20px;
 }
 
+.flex-auto {
+  flex: auto;
+}
+
 .bottom-100px {
   bottom: 100px;
 }
@@ -287,6 +291,14 @@ a:hover {
 
 .max-w-450px {
   max-width: 450px;
+}
+
+.max-w-150px {
+  max-width: 150px;
+}
+
+.h-400px {
+  height: 400px;
 }
 
 .border-blue {
