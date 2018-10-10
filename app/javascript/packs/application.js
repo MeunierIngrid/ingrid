@@ -46,15 +46,18 @@ radios.forEach((radio)=>{
 });
 
 // scroll progress bar
-$(document).on('scroll',function(){
-  if ($(document).scrollTop() > 330) {
-   $('#total-scores').addClass('fixed')
-   $('#wrapper-after-progress-bar').addClass('margin-for-progress-bar-fixed')
-  } else {
-   $('#total-scores').removeClass('fixed')
-   $('#wrapper-after-progress-bar').removeClass('margin-for-progress-bar-fixed')
-  }
-});
+if (document.querySelector(".total-score-wrapper")) {
+  const delta = document.querySelector(".total-score-wrapper").offsetTop;
+  $(document).on('scroll',function(){
+    if ($(document).scrollTop() > delta + 30) {
+     $('#total-scores').addClass('fixed')
+     $('#wrapper-after-progress-bar').addClass('margin-for-progress-bar-fixed')
+    } else {
+     $('#total-scores').removeClass('fixed')
+     $('#wrapper-after-progress-bar').removeClass('margin-for-progress-bar-fixed')
+    }
+  });
+}
 
 // scroll progress bar
 $(document).on('scroll',function(){

@@ -66,7 +66,7 @@
   width: 200px;
   height: 166px;
   position: relative;
-  background: $marron-light;
+  background: $marron-medium;
 }
 .pointer:after {
   content: "";
@@ -87,7 +87,7 @@
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 20px solid $marron-light;
+  border-left: 20px solid $marron-medium;
   border-top: 83px solid transparent;
   border-bottom: 83px solid transparent;
 }
