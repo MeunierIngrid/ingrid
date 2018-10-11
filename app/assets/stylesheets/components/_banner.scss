@@ -6,13 +6,13 @@
   // background: -ms-linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* ie10+ */
   // background: linear-gradient(45deg, rgba(240,230,210,1) 0%, rgba(202,187,159,1) 100%); /* w3c */
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CABB9F', endColorstr='#F0E6D2',GradientType=1 ); /* ie6-9 */
-  background-color: $marron-light;
-  height: calc(45vh + 70px);
-  padding-top: 70px;
+  // background-color: $marron-light;
+  // height: calc(45vh + 70px);
+  // padding-top: 50px;
 }
 
 .banner > img {
-  max-width: 70%;
+  max-width: 100%;
 }
 
 .banner > .pushline {

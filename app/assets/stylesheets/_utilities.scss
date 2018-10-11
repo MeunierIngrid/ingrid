@@ -76,6 +76,10 @@ a:hover {
 }
 
 
+.min-height-100vh {
+  min-height: calc(100vh - 170px) !important;
+}
+
 /*-=-=-=-=-=-=-=-=-=-*/
 /* Column Grids */
 /*-=-=-=-=-=-=-=-=-= */
@@ -109,7 +113,7 @@ a:hover {
 .wrapper {
   border-bottom: 7px solid #CABB9F;
   padding: 40px 0px;
-  min-height: calc(100vh - 170px);
+  min-height: calc(70vh - 170px);
 }
 
 .wrapper-grid{

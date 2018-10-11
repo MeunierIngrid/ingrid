@@ -1,12 +1,13 @@
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
+      <%= image_tag "pictos2.png", class: "max-w-450px w-100 pb-3" %>
 
       <h1>Je souhaite comprendre</h1>
 
       <h3>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</h3>
 
-      <h2>Liste des e-books disponibles</h2>
+      <h2 class="pt-5">Liste des e-books disponibles</h2>
     </div>
     <div class="row">
       <%= render @books %>
@@ -20,7 +21,7 @@
 
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
 
       <h2>Pourquoi des e-books ?</h2>
 
@@ -43,7 +44,7 @@
         J'ai pris le parti de subdiviser les informations par thème puisque <b>chacun a des besoins différents</b>.
       </p>
 
-      <%= image_tag "book-mapping.png", class: "max-w-600px" %>
+      <%= image_tag "book-mapping.png", class: "max-w-600px w-100" %>
     </div>
   </div>
 </div>
@@ -55,11 +56,25 @@
 
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
       <h2>Dans chaque e-book, vous y trouverez :</h2>
+      <div class="d-none d-md-block">
+        <%= image_tag "book-composition.png", class: "max-w-850px w-100" %>
+      </div>
 
-      <%= image_tag "book-composition.png", class: "max-w-850px" %>
+      <div class="d-md-none">
+        <p>
+          Un récapitulatif du <b>fonctionnement</b> et des <b>besoins</b> spécifiques des surdoués
+        </p>
 
+        <p>
+          Des explications sur les <b>rouages psychologiques</b> en jeu. Plus vous accedez à la connaissance en matière de psychologie, plus vous serez autonomes pour analyser et gérer vous-mêmes les situations à venir.
+        </p>
+
+        <p>
+          Des <b>conseils, trucs et astuces</b>, recommandations pratiques et concrètes que j'ai pu tester avec la collaboration de nombreux clients.
+        </p>
+      </div>
     </div>
   </div>
 </div>

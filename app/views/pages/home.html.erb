@@ -2,18 +2,18 @@
 <%#= link_to "La liste de mes livre", books_path %>
 
 
-<div class="banner d-flex align-items-center flex-column">
-  <%= image_tag "logo.png" %>
-  <p class="pushline">Be yourself : Il n'est jamais trop tard pour être soi même</p>
 
-</div>
 
 <div class="wrapper bg-marron-light">
   <div class="container">
-    <div class="row text-center p-5">
+    <div class="row text-center px-3">
       <p>
-<!--         Au travers de mon site, je tente d'offrir de façon exhaustive et synthétique les réponses aux questions inhérentes à la découverte de la <b>douance adulte</b> pour devenir un <b>"surdoué décomplexé"</b>.
-        <br> -->
+      <div class="banner d-flex align-items-center flex-column">
+        <%= image_tag "logo.png" %>
+        <p class="pushline">Be yourself : Il n'est jamais trop tard pour être soi même</p>
+
+      </div>
+      <p>
         Pourquoi décomplexé? Car <b>être surdoué n'est ni honteux, ni une insulte, ni de l'orgueil mal placé</b>. Etre surdoué est une <b>chance</b> quand on sait l'exploiter.
       </p>
       <p>
@@ -22,58 +22,59 @@
     </div>
   </div>
 
-
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="hover panel d-flex justify-content-center">
-        <div class="front">
-          <div class="box1 d-flex align-items-center">
-            <%= image_tag "pictos1.png" %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="hover panel d-flex justify-content-center">
+          <div class="front">
+            <div class="box1 d-flex align-items-center">
+              <%= image_tag "pictos1.png" %>
+            </div>
           </div>
-        </div>
-        <div class="back">
-          <div class="box2">
-            <h2>Suis-je concerné ?</h2>
-            <p>Vous trouverez ici des informations concernant la douance, les tests de QI et les diagnostics, des témoignages ainsi qu'un questionnaire de 73 questions</p>
-            <br>
-            <%= link_to "Le questionnaire", quizz_informations_path, class: "btn-red" %>
+          <div class="back">
+            <div class="box2">
+              <h2>Suis-je concerné ?</h2>
+              <p>Vous trouverez ici des informations concernant la douance, les tests de QI et les diagnostics, des témoignages ainsi qu'un questionnaire de 73 questions</p>
+              <br>
+              <%= link_to "Le questionnaire", quizz_informations_path, class: "btn-red" %>
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="hover panel d-flex justify-content-center">
-        <div class="front">
-          <div class="box1 d-flex align-items-center">
-            <%= image_tag "pictos2.png" %>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="hover panel d-flex justify-content-center">
+          <div class="front">
+            <div class="box1 d-flex align-items-center">
+              <%= image_tag "pictos2.png" %>
+            </div>
           </div>
-        </div>
-        <div class="back">
-          <div class="box2">
-            <h2>Je souhaite comprendre</h2>
-            <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
-            <br>
-            <%= link_to "Les ebooks", books_path, class: "btn-red" %>
+          <div class="back">
+            <div class="box2">
+              <h2>Je souhaite comprendre</h2>
+              <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
+              <br>
+              <%= link_to "Les ebooks", books_path, class: "btn-red" %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="hover panel d-flex justify-content-center">
-        <div class="front">
-          <div class="box1 d-flex align-items-center">
-            <%= image_tag "pictos3.png" %>
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="hover panel d-flex justify-content-center">
+          <div class="front">
+            <div class="box1 d-flex align-items-center">
+              <%= image_tag "pictos3.png" %>
+            </div>
           </div>
-        </div>
-        <div class="back">
-          <div class="box2">
-            <h2>Je souhaite en discuter</h2>
-            <p>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</p>
-            <br>
-            <%= link_to "Contact", new_contact_path, class: "btn-red" %>
+          <div class="back">
+            <div class="box2">
+              <h2>Je souhaite en discuter</h2>
+              <p>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</p>
+              <br>
+              <%= link_to "Contact", new_contact_path, class: "btn-red" %>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +89,7 @@
 
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
       <h2>La démarche</h2>
       <p>
         Quand on se pense ou se découvre surdoué, on a besoin de savoir <b>rapidement</b> ce qu'il en est. Se déclenche un fort sentiment d'empressement à comprendre, savoir et solutionner.
@@ -195,7 +196,7 @@
 
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
       <h2>L'accompagnement</h2>
       <p><b>Etre surdoué n'est ni une névrose, ni une pathologie. Il n'y a donc pas lieu d'engager une thérapie pour cela.</b></p>
 
@@ -237,7 +238,7 @@
 
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
-    <div class="content p-5">
+    <div class="content py-5">
       <h2>Ca me parle</h2>
       <p>
         <b>Témoignages issus du livre de Audrey Bouquet
