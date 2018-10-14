@@ -6,7 +6,7 @@ class SurveysController < ApplicationController
     @survey = Survey.new
     session[:answers_attributes] = {} if session[:answers_attributes].nil?
     @question_number = 0
-    set_total_scores
+    @total_scores = QuestionsCategory.set_total_scores(session[:answers_attributes])
   end
 
   def create
@@ -31,21 +31,12 @@ class SurveysController < ApplicationController
     @question_id = params[:question_id]
     @score = params[:score].to_i
     session[:answers_attributes][@question_id] = @score
-    set_total_scores
+    @total_scores = QuestionsCategory.set_total_scores(session[:answers_attributes])
   end
 
   private
 
   def survey_params
     params.require(:survey).permit(:email, answers_attributes: [:score, :question_id, :_destroy])
-  end
-
-  def set_total_scores
-    session_qids = session[:answers_attributes].map{|k, v| k.to_i}
-    @total_scores = QuestionsCategory.all.map do |questions_category|
-      category_qids = questions_category.questions.map(&:id)
-      total_score = (category_qids & session_qids).size * 100 / category_qids.size
-      [ questions_category.title, total_score ]
-    end.to_h
   end
 end
