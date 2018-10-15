@@ -22,9 +22,7 @@ class SurveysController < ApplicationController
   end
 
   def show
-    @survey = Survey.find_by(token: params[:token])
-    @total_score = @survey.total_score.to_i
-    @survey_result = @survey.survey_result(@total_score)
+    @survey = Survey.find_by(token: params[:token]).backup
   end
 
   def update_session

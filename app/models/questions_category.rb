@@ -13,4 +13,8 @@ class QuestionsCategory < ApplicationRecord
       [ questions_category.title, total_score ]
     end.to_h
   end
+
+  def weighted_average(survey)
+    survey.answers.filter_by_category(self).weighted_average
+  end
 end

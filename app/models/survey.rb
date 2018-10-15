@@ -14,7 +14,29 @@ class Survey < ApplicationRecord
     answers.weighted_average
   end
 
-  def survey_result(total_score)
+  def survey_result
     SurveyResult.find_by("max_value >= ? AND min_value <= ?", total_score, total_score)
   end
+
+  def backup
+    json = {
+      total_score: total_score,
+      survey_result: {
+        min_value: survey_result.min_value,
+        max_value: survey_result.max_value,
+        content: survey_result.content
+      },
+      questions_categories: []
+    }
+    QuestionsCategory.all.each do |category|
+      json[:questions_categories] << {
+        weighted_average: category.weighted_average(self),
+        title: category.title,
+        content: category.content,
+        visible: category.visible
+      }
+    end
+    json
+  end
 end
+
