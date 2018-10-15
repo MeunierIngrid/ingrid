@@ -22,7 +22,7 @@ class SurveysController < ApplicationController
   end
 
   def show
-    @survey = Survey.find_by(token: params[:token]).backup
+    @survey = JSON.parse(Survey.find_by(token: params[:token]).backup)
   end
 
   def update_session

@@ -9,13 +9,13 @@
     </div>
   </div>
   <div class="text-center">
-    <%= render "shared/score_circle", radius: 300, score: @survey[:total_score].to_i  %>
+    <%= render "shared/score_circle", radius: 300, score: @survey["total_score"].to_i  %>
   </div>
 
   <div class="container text-center">
     <div class="content py-5">
-      <h3>Vous avez obtenu un score entre <%= @survey[:survey_result][:min_value] %>% et <%= @survey[:survey_result][:max_value] %>%</h3>
-      <p><%= @survey[:survey_result][:content] %></p>
+      <h3>Vous avez obtenu un score entre <%= @survey["survey_result"]["min_value"] %>% et <%= @survey["survey_result"]["max_value"] %>%</h3>
+      <p><%= @survey["survey_result"]["content"] %></p>
     </div>
   </div>
 </div>
@@ -31,15 +31,15 @@
 <div class="bg-marron-light">
   <div class="container">
     <div class="row">
-      <% @survey[:questions_categories].each do |category| %>
-        <% if category[:visible] %>
+      <% @survey["questions_categories"].each do |category| %>
+        <% if category["visible"] %>
 
           <div class="col-md-3 text-center">
-            <%= render "shared/score_circle", radius: 176, score: category[:weighted_average].to_i  %>
+            <%= render "shared/score_circle", radius: 176, score: category["weighted_average"].to_i  %>
           </div>
           <div class="col-md-9">
-            <h3><%= category[:title] %></h3>
-            <p><%= category[:content] %></p>
+            <h3><%= category["title"] %></h3>
+            <p><%= category["content"] %></p>
           </div>
         <% end %>
       <% end %>

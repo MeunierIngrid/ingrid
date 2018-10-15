@@ -9,6 +9,8 @@ class Survey < ApplicationRecord
   validates :email, presence: { message: "Email manquant" }
   validates :email, uniqueness: { message: "Email déjà existant" }
   validates :answers, length: { is: Question.count, message: "Test incomplet" }
+  after_create :add_backup
+
 
   def total_score
     answers.weighted_average
@@ -18,7 +20,7 @@ class Survey < ApplicationRecord
     SurveyResult.find_by("max_value >= ? AND min_value <= ?", total_score, total_score)
   end
 
-  def backup
+  def add_backup
     json = {
       total_score: total_score,
       survey_result: {
@@ -36,7 +38,7 @@ class Survey < ApplicationRecord
         visible: category.visible
       }
     end
-    json
+    update(backup: json.to_json)
   end
 end
 

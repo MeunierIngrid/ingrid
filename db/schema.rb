@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_002148) do
+ActiveRecord::Schema.define(version: 2018_10_15_003217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_002148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.jsonb "backup"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
