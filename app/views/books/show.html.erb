@@ -13,31 +13,6 @@
                     Télécharger
                   </button>
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="emailModalLabel">Finaliser le téléchargement</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body text-center">
-                          <p>Veillez compléter votre mail s'il vous plait, afin qu'un lien de téléchargement vous soit envoyer.</p>
-                          <h2>Email</h2>
-                          <%= simple_form_for :order do |f| %>
-                            <%= f.input :email, placeholder: "john.smith@gmail.com" %>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn-small-marron-dark" data-dismiss="modal">Annuler</button>
-                          <%= f.submit 'Voir mes résultats', class: "btn-small-red" %>
-                          <% end %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 <% else %>
                   <label class="text-center">
                     <span class="btn-red">Acheter</span>
@@ -74,3 +49,8 @@
   </div>
 </div>
 
+
+<%= render "shared/email_modal",
+  title: "Finaliser le téléchargement",
+  content: "Veillez compléter votre mail s'il vous plait, afin qu'un lien de téléchargement vous soit envoyer.",
+  path: free_order_path(@book) %>

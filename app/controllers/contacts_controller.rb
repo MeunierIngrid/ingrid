@@ -9,9 +9,14 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.new_message(@contact).deliver_now
+      redirect_to @contact
     else
       render :new
     end
+  end
+
+  def show
+    @contact = Contact.find(params[:id])
   end
 
   private
