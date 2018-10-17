@@ -13,7 +13,11 @@
           <br>
           <%= book.price %>€</div>
         <div class="text-center">
-          <%= link_to "Commander", book, class: "btn-red" %>
+          <% if book.visible? %>
+            <%= link_to "Commander", book, class: "btn-red" %>
+          <% else %>
+            <h3>Actuallement non disponible</h3>
+          <% end %>
         </div>
       </div>
     </div>

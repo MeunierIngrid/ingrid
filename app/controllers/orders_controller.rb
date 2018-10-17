@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
       amount: @book.price
     )
 
-    OrderMailer.download_pdf(@order.id, @book.id).deliver_now
+    OrderMailer.download_pdf(@order.email, @book.id).deliver_now
 
     redirect_to @order
 

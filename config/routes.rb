@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/mentions-legales', to: "pages#legal_notice", as: 'legal_notice'
 
   get 'orders/:id/download_pdf', to: "orders#download_pdf", as: 'download_pdf'
+  get 'books/:id/download_pdf', to: "books#download_pdf", as: 'book_download_pdf'
+
 
   resources :surveys, only: [:new, :create]
   get '/surveys/:token', to: "surveys#show", as: 'survey'

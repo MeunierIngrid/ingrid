@@ -8,26 +8,58 @@
               <%= image_tag display_cover(@book), class: "book-card-img" %>
               <div class="book-card-content d-flex justify-content-between flex-column">
                 <div class="book-card-title text-center"><%= @book.price %>€</div>
-                <label class="text-center">
-                  <span class="btn-red">Acheter</span>
-                  <%#= link_to "Commander", @book, class: "btn-red" %>
-                  <div class="d-none">
-                    <%= form_tag book_orders_path(@book) do %>
-                    <!--   <article>
-                        <label class="amount">
-                          <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
-                        </label>
-                      </article> -->
-                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-name="<%= Book %>"
-                        data-description="Book <%= @book.title %>"
-                        data-amount="<%= @book.price_cents %>"
-                        data-currency="<%= @book.price.currency %>">
-                      </script>
+                <% if @book.price.zero? %>
+                  <button type="button" class="btn-red" data-toggle="modal" data-target="#emailModal">
+                    Télécharger
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="emailModalLabel">Finaliser le téléchargement</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body text-center">
+                          <p>Veillez compléter votre mail s'il vous plait, afin qu'un lien de téléchargement vous soit envoyer.</p>
+                          <h2>Email</h2>
+                          <%= simple_form_for :order do |f| %>
+                            <%= f.input :email, placeholder: "john.smith@gmail.com" %>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn-small-marron-dark" data-dismiss="modal">Annuler</button>
+                          <%= f.submit 'Voir mes résultats', class: "btn-small-red" %>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
-                  <% end %>
-                </label>
+                  </div>
+
+                <% else %>
+                  <label class="text-center">
+                    <span class="btn-red">Acheter</span>
+                    <%#= link_to "Commander", @book, class: "btn-red" %>
+                    <div class="d-none">
+                      <%= form_tag book_orders_path(@book) do %>
+                      <!--   <article>
+                          <label class="amount">
+                            <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
+                          </label>
+                        </article> -->
+                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-name="<%= Book %>"
+                          data-description="Book <%= @book.title %>"
+                          data-amount="<%= @book.price_cents %>"
+                          data-currency="<%= @book.price.currency %>">
+                        </script>
+                      </div>
+                    <% end %>
+                  </label>
+                <% end %>
               </div>
             </div>
           </div>
