@@ -3,6 +3,6 @@ class ContactMailer < ApplicationMailer
   def new_message(contact)
     @contact = contact
 
-    mail(to: "jonathan.serafini@gmail.com", subject: 'Contact')
+    mail(to: "contact@ingrid-meunier.fr", subject: 'Contact')
   end
 end
