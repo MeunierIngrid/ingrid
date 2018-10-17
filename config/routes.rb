@@ -15,14 +15,17 @@ Rails.application.routes.draw do
   get '/surveys/session', to: "surveys#update_session", as: 'session_survey'
   get '/mentions-legales', to: "pages#legal_notice", as: 'legal_notice'
 
-  get 'orders/:id/download_pdf', to: "orders#download_pdf", as: 'download_pdf'
+  get 'orders/:id/download-pdf', to: "orders#download_pdf", as: 'download_pdf'
+
+  get 'books/:id/download-pdf', to: "books#download_pdf", as: 'book_download_pdf'
+  get 'books/:book_id/free-order', to: "orders#free", as: 'free_order'
 
   resources :surveys, only: [:new, :create]
   get '/surveys/:token', to: "surveys#show", as: 'survey'
   resources :books, only: [:index, :show] do
     resources :orders, only: [:show, :create], shallow: true
   end
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:new, :create, :show]
 end
 
 

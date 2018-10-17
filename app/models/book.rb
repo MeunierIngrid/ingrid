@@ -5,4 +5,8 @@ class Book < ApplicationRecord
   has_one_attached :pdf
   monetize :price_cents
   has_many :orders
+
+  def visible?
+    visible
+  end
 end

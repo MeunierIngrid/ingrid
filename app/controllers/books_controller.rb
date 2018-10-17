@@ -8,4 +8,11 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
+
+  def download
+    @book = Book.find(params[:book_id])
+    OrderMailer.download_pdf(params[:order][:email], @book.id).deliver_now
+
+    redirect_to @book
+  end
 end

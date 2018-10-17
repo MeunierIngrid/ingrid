@@ -6,13 +6,13 @@ class SurveysController < ApplicationController
     @survey = Survey.new
     session[:answers_attributes] = {} if session[:answers_attributes].nil?
     @question_number = 0
-    set_total_scores
+    @total_scores = QuestionsCategory.set_total_scores(session[:answers_attributes])
   end
 
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
-      # envoie du mail
+      SurveyMailer.result(@survey).deliver_now
       redirect_to survey_path(@survey.token)
     else
       redirect_to new_survey_path
@@ -22,30 +22,19 @@ class SurveysController < ApplicationController
   end
 
   def show
-    @survey = Survey.find_by(token: params[:token])
-    @total_score = @survey.total_score.to_i
-    @survey_result = @survey.survey_result(@total_score)
+    @survey = JSON.parse(Survey.find_by(token: params[:token]).backup)
   end
 
   def update_session
     @question_id = params[:question_id]
     @score = params[:score].to_i
     session[:answers_attributes][@question_id] = @score
-    set_total_scores
+    @total_scores = QuestionsCategory.set_total_scores(session[:answers_attributes])
   end
 
   private
 
   def survey_params
     params.require(:survey).permit(:email, answers_attributes: [:score, :question_id, :_destroy])
-  end
-
-  def set_total_scores
-    session_qids = session[:answers_attributes].map{|k, v| k.to_i}
-    @total_scores = QuestionsCategory.all.map do |questions_category|
-      category_qids = questions_category.questions.map(&:id)
-      total_score = (category_qids & session_qids).size * 100 / category_qids.size
-      [ questions_category.title, total_score ]
-    end.to_h
   end
 end

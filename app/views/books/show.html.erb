@@ -8,26 +8,33 @@
               <%= image_tag display_cover(@book), class: "book-card-img" %>
               <div class="book-card-content d-flex justify-content-between flex-column">
                 <div class="book-card-title text-center"><%= @book.price %>€</div>
-                <label class="text-center">
-                  <span class="btn-red">Acheter</span>
-                  <%#= link_to "Commander", @book, class: "btn-red" %>
-                  <div class="d-none">
-                    <%= form_tag book_orders_path(@book) do %>
-                    <!--   <article>
-                        <label class="amount">
-                          <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
-                        </label>
-                      </article> -->
-                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-name="<%= Book %>"
-                        data-description="Book <%= @book.title %>"
-                        data-amount="<%= @book.price_cents %>"
-                        data-currency="<%= @book.price.currency %>">
-                      </script>
-                    </div>
-                  <% end %>
-                </label>
+                <% if @book.price.zero? %>
+                  <button type="button" class="btn-red" data-toggle="modal" data-target="#emailModal">
+                    Télécharger
+                  </button>
+
+                <% else %>
+                  <label class="text-center">
+                    <span class="btn-red">Acheter</span>
+                    <%#= link_to "Commander", @book, class: "btn-red" %>
+                    <div class="d-none">
+                      <%= form_tag book_orders_path(@book) do %>
+                      <!--   <article>
+                          <label class="amount">
+                            <span>Amount: <%#= humanized_money_with_symbol(@book.price) %></span>
+                          </label>
+                        </article> -->
+                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-name="<%= Book %>"
+                          data-description="Book <%= @book.title %>"
+                          data-amount="<%= @book.price_cents %>"
+                          data-currency="<%= @book.price.currency %>">
+                        </script>
+                      </div>
+                    <% end %>
+                  </label>
+                <% end %>
               </div>
             </div>
           </div>
@@ -42,3 +49,8 @@
   </div>
 </div>
 
+
+<%= render "shared/email_modal",
+  title: "Finaliser le téléchargement",
+  content: "Veillez compléter votre mail s'il vous plait, afin qu'un lien de téléchargement vous soit envoyer.",
+  path: free_order_path(@book) %>
