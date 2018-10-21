@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "https://ingrid-meunier-staging.herokuapp.com/" }
+  config.action_mailer.default_url_options = { host: "https://ingrid-meunier.herokuapp.com/" }
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -7,7 +7,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'ingrid-meunier-staging.herokuapp.com/',
+    domain: 'ingrid-meunier.herokuapp.com/',
     address: 'smtp.sendgrid.net',
     port: 587,
     authentication: :plain,
