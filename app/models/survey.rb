@@ -16,6 +16,10 @@ class Survey < ApplicationRecord
     answers.weighted_average
   end
 
+  def to_s
+    email
+  end
+
   def survey_result
     SurveyResult.find_by("max_value >= ? AND min_value <= ?", total_score, total_score)
   end
