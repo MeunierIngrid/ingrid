@@ -12,11 +12,11 @@
         <p><%= content %></p>
         <h2>Email</h2>
         <%= simple_form_for :order, url: path, method: :get do |f| %>
-          <%= f.input :email, placeholder: "john.smith@gmail.com" %>
+          <%= f.input :email, placeholder: "john.smith@gmail.com", label: false %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-small-marron-dark" data-dismiss="modal">Annuler</button>
-        <%= f.submit 'Voir mes résultats', class: "btn-small-red" %>
+        <%= f.submit 'Finaliser', class: "btn-small-red" %>
         <% end %>
       </div>
     </div>

@@ -11,7 +11,10 @@
         <div class="book-card-title text-center">
           <%= book.title %>
           <br>
-          <%= book.price %>€</div>
+        <% if book.visible? %>
+          <%= book.price %>€
+        <% end %>
+        </div>
         <div class="text-center">
           <% if book.visible? %>
             <%= link_to "Commander", book, class: "btn-red" %>
