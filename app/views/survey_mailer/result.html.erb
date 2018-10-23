@@ -1,30 +1,6 @@
-
-<p>Bonjour :)</p>
-
-<p>
-  Les résultats du test sont disponibles à l'adresse suivante:
-</p>
-<p>
-  <a href="<%= survey_url(@survey.token) %>"><%= survey_url(@survey.token) %></a>
-</p>
-<p>Vous avez passé le prétest et il vous a donné un score supérieur à 65%, voir 80%? Mais vous hésitez à sauter le pas? Vous vous posez pleins de questions sur les tests, le QI, les démarches?
-</p>
-<p>Pour vous aider, vous trouver ci joint un e-book intitulé « Et si j'étais surdouée ». Il vous donnera toutes les informations nécessaires pour, je l'espère, sauter le pas et vous faire tester. Vous y découvrirez l'interet
-de se faire bilanter, des informations pour tout savoir sur les bilans, les tests et le QI. Je vous conseillerai sur les bonnes conditions de passations et les informations utiles à vérifier. Le but est que vous ayez tous
-les éléments en main pour prendre votre décision.
-</p>
-<p>
-Je vous souhaite une bonne lecture
-</p>
-<p>
-A bientôt
-</p>
-<p>Ingrid Meunier
-  <br>
-Psychothérapeute spécialiste de l'adulte surdoué
-</p>
-<p>
-PS : n'étant pas fan de la polution de boite mail, vous ne recevrez pas de newsletter ou autre spam de ma
-part. Je vous informerai par contre, si vous l'acceptez, dès qu'un nouvel e-book sera sorti (tous les 3-4
-mois). Si vous ne souhaitez pas être tenus informés, n'hésitez pas à me le signaler.
-</p>
+<%= @total_score %>
+<% if @total_score > 65 %>
+  <%= render "positif", survey: @survey %>
+<% else %>
+  <%= render "negatif", survey: @survey %>
+<% end %>

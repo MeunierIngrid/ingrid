@@ -1,6 +1,6 @@
 ActiveAdmin.register Book do
 
-  permit_params :title, :token, :cover, :price, :abstract, :description, :pdf, :visible
+  permit_params :title, :token, :cover, :price, :abstract, :description, :pdf, :visible, :position, :slug
 
   form do |f|
     f.inputs do
@@ -11,6 +11,8 @@ ActiveAdmin.register Book do
       f.input :cover, as: :file
       f.input :pdf, as: :file
       f.input :visible
+      f.input :position
+      f.input :slug
       f.button :submit
     end
   end
@@ -21,11 +23,15 @@ ActiveAdmin.register Book do
       row :description
       row :abstract
       row :price
+      row :position
+      row :slug
       row :cover do |book|
         image_tag display_cover(book)
       end
       row :pdf do |book|
-        link_to "pdf", cl_image_path(book.pdf.key), target: "_blank"
+        if book.pdf && book.pdf.attachment
+          link_to "pdf", cl_image_path(book.pdf.key), target: "_blank"
+        end
       end
       row :visible
     end
