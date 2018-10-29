@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @books = Book.all
+    @books = Book.all.order(position: :asc)
   end
 
   def show
