@@ -224,7 +224,8 @@ a:hover {
 }
 
 .btn-red:hover {
-  opacity: 0.8;
+  background-color: #9C0510;
+  color: white;
 }
 
 
@@ -236,7 +237,8 @@ a:hover {
 }
 
 .btn-small-red:hover {
-  opacity: 0.8;
+  background-color: #9C0510;
+  color: white;
 }
 
 .btn-small-marron-dark {
@@ -269,9 +271,6 @@ a:hover {
   margin: 20px 0px;
 }
 
-.btn-red:hover {
-  opacity: 0.8;
-}
 
 .w-200px {
   width: 200px;
