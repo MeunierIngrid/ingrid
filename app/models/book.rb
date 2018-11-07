@@ -14,6 +14,6 @@ class Book < ApplicationRecord
   end
 
   def add_slug
-    self.slug = title.parameterize
+    self.slug = title.parameterize if self.slug.empty?
   end
 end

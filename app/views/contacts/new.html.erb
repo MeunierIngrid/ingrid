@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<%= render "shared/transition", image_path: "transitions/book.jpg",
+<%= render "shared/transition", image_path: "transitions/meeting.jpg",
                                 title: "La spéculation est un luxe. Tandis que l'action est une nécessité.",
                                 content: "Bergson, philosophe"  %>
 
@@ -76,7 +76,7 @@
         <%= render "condition",
                    color: "red",
                    icon: "times",
-                   title: "Unaccompagnement thérapeutique",
+                   title: "Un accompagnement thérapeutique",
                    content: "C'est à dire un suivi thérapeutique de longue durée"  %>
 
       </div>
@@ -104,7 +104,7 @@
 </div>
 
 
-<%= render "shared/transition", image_path: "transitions/book.jpg",
+<%= render "shared/transition", image_path: "transitions/meeting.jpg",
                                 title: "Ce qui tourmente les hommes, ce n'est pas la réalité mais les opinions qu'ils s'en font.",
                                 content: "Epictète, Philosophe"  %>
 
@@ -112,7 +112,7 @@
   <%= image_tag "RDV.png", class: "max-w-450px mt-5 w-100" %>
 </div>
 
-<%= render "shared/transition", image_path: "transitions/book.jpg",
+<%= render "shared/transition", image_path: "transitions/meeting.jpg",
                                 title: "La créativité, c'est l'intelligence qui s'amuse",
                                 content: ""  %>
 
@@ -189,9 +189,9 @@
         <div class="col-12">
           <%= f.input :other, label: "Pour une autre raison :" %>
         </div>
-        <div class="col-12">
-          <%= f.input :complement, label: "Complément d'information" %>
-        </div>
+<!--         <div class="col-12">
+          <%#= f.input :complement, label: "Complément d'information" %>
+        </div> -->
 
         <div class="text-center w-100">
           <%= f.button :submit, "Envoyer", class: "btn btn-red" %>

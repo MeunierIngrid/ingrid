@@ -1,7 +1,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "logo-navbar.png" %>
+    <div class="d-none d-md-block">
+      <%= image_tag "logo-navbar.png" %>
+    </div>
+    <div class="d-block d-md-none">
+      <%= image_tag "logo-small.png" %>
+    </div>
+
   </a>
 
 <%#= link_to "avoir des infos sur test", quizz_informations_path %>
