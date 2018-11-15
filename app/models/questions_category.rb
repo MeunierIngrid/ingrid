@@ -1,8 +1,6 @@
 class QuestionsCategory < ApplicationRecord
   has_many :questions
   validates :title, presence: true, uniqueness: true
-  validates :min_value, presence: true
-  validates :max_value, presence: true
 
   def self.visibles
     where(visible: true)
