@@ -7,13 +7,8 @@
     <div class="d-block d-md-none">
       <%= image_tag "logo-small.png" %>
     </div>
-
   </a>
 
-<%#= link_to "avoir des infos sur test", quizz_informations_path %>
-<%#= link_to "La liste de mes livre", books_path %>
-
-  <!-- Right Navigation -->
   <div class="d-none d-md-block">
     <div class="d-flex align-items-center justify-content-between">
       <%= link_to "Le questionnaire", quizz_informations_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -32,27 +27,9 @@
       <%# end %> -->
     </div>
   </div>
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item d-block d-md-none">
-    <div class="dropdown">
-      <i class="fa fa-bars" data-toggle="dropdown"></i>
-      <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <%= link_to "Le questionnaire", quizz_informations_path, class: "dropdown-item" %>
-        <%= link_to "Les e-books", books_path, class: "dropdown-item" %>
-        <%= link_to "Qui suis-je ?", biography_path, class: "dropdown-item"  %>
-        <%= link_to "Contact", new_contact_path(anchor: "contact"), class: "dropdown-item"  %>
-        <%= link_to "Les ressources", ressources_path, class: "dropdown-item"  %>
-<!--         <%# if current_user %>
-          <%#= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%# else %>
-          <div class="navbar-wagon-item">
-            <%#= link_to "Se connecter", new_user_session_path, class: "px-0 navbar-wagon-item navbar-wagon-link" %>
-            /
-            <%#= link_to "S'inscricre", new_user_session_path, class: "px-0 navbar-wagon-link" %>
-          </div>
-        <%# end %> -->
-      </div>
-    </div>
+
+  <div class="d-block d-md-none">
+    <%= render "shared/navbar_burger" %>
   </div>
 </div>
 
