@@ -37,7 +37,7 @@
       <div class="container">
         <h2><%= questions_category.title %></h2>
         <div class="row">
-          <% questions_category.questions.each do |question| %>
+          <% questions_category.visible_questions.each do |question| %>
             <div class="col-md-8">
               <p><%= @question_number += 1 %> - <%= question.title %></p>
             </div>

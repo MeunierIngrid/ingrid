@@ -3,6 +3,11 @@ class Answer < ApplicationRecord
   belongs_to :question
 
 
+  def self.order_by_categories
+    self.joins(:question)
+        .order("questions.questions_category_id asc")
+  end
+
   def self.filter_by_category(questions_category)
     self.joins(:question)
         .where(questions: {questions_category: questions_category})
