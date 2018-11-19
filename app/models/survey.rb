@@ -8,7 +8,7 @@ class Survey < ApplicationRecord
 
   validates :email, presence: { message: "Email manquant" }
   validates :email, uniqueness: { message: "Email déjà existant" }
-  # validates :answers, length: { is: Question.visibles.count, message: "Test incomplet" }
+  validates :answers, length: { is: Question.visibles.count, message: "Test incomplet" }
   after_create :add_backup
 
 
