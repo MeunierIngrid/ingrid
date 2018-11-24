@@ -22,17 +22,17 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container d-none d-md-block">
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4">
         <div class="hover panel d-flex justify-content-center">
           <div class="front">
-            <div class="box1 d-flex align-items-center">
+            <div class="box1 d-flex align-items-center justify-content-center">
               <%= image_tag "pictos1.png" %>
             </div>
           </div>
           <div class="back">
-            <div class="box2">
+            <div class="box2 d-flex flex-column align-items-center">
               <h2>Suis-je concerné ?</h2>
               <p>Vous trouverez ici des informations concernant la douance, les tests de QI et les diagnostics, des témoignages ainsi qu'un questionnaire de 73 questions</p>
               <br>
@@ -46,12 +46,12 @@
       <div class="col-12 col-sm-6 col-md-4">
         <div class="hover panel d-flex justify-content-center">
           <div class="front">
-            <div class="box1 d-flex align-items-center">
+            <div class="box1 d-flex align-items-center justify-content-center">
               <%= image_tag "pictos2.png" %>
             </div>
           </div>
           <div class="back">
-            <div class="box2">
+            <div class="box2 d-flex flex-column align-items-center">
               <h2>Je souhaite comprendre</h2>
               <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
               <br>
@@ -64,12 +64,12 @@
       <div class="col-12 col-sm-6 col-md-4">
         <div class="hover panel d-flex justify-content-center">
           <div class="front">
-            <div class="box1 d-flex align-items-center">
+            <div class="box1 d-flex align-items-center justify-content-center">
               <%= image_tag "pictos3.png" %>
             </div>
           </div>
           <div class="back">
-            <div class="box2">
+            <div class="box2 d-flex flex-column align-items-center">
               <h2>Je souhaite en discuter</h2>
               <p>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</p>
               <br>
@@ -80,7 +80,42 @@
       </div>
     </div>
   </div>
+  <div class="py-5 d-none d-md-block"></div>
+
+  <div class="container d-md-none d-block">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="box2 my-3 d-flex flex-column align-items-center">
+          <%= image_tag "pictos1.png", class: "w-100 pb-4 pt-2" %>
+          <p>Vous trouverez ici des informations concernant la douance, les tests de QI et les diagnostics, des témoignages ainsi qu'un questionnaire de 73 questions</p>
+          <br>
+          <%= link_to "Le questionnaire", quizz_informations_path, class: "btn-red" %>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="box2 my-3 d-flex flex-column align-items-center">
+          <%= image_tag "pictos2.png", class: "w-100 pb-4 pt-2" %>
+          <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
+          <br>
+          <%= link_to "Les ebooks", books_path, class: "btn-red" %>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="box2 my-3 d-flex flex-column align-items-center">
+          <%= image_tag "pictos3.png", class: "w-100 pb-4 pt-2" %>
+          <p>Vous trouverez ici les modalités pour me contacter et me parler via un appel vidéo</p>
+          <br>
+          <%= link_to "Contact", new_contact_path, class: "btn-red" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
 
 <%= render "shared/transition", image_path: "transitions/meeting.jpg",
                                 title: "Il n'est jamais trop tard pour être ce que vous auriez pu être.",
