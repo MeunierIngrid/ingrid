@@ -4,6 +4,10 @@ ActiveAdmin.register Survey do
   index do
     selectable_column
     column :email
+    column :created_at
+    column "Score" do |survey|
+      survey.total_score.round(2)
+    end
     column "Lien" do |survey|
       link_to "page de résultats", survey_path(survey.token)
     end
