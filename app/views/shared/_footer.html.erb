@@ -3,9 +3,9 @@
     <div class="footer-links d-flex align-items-center">
       <a href="https://www.facebook.com/IngridMeunierpsychotherapie/" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.linkedin.com/in/ingrid-meunier-67b76185/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <%= link_to "Mentions légales", legal_notice_path %>
+      <button type="button" class="" data-toggle="modal" data-target=".modalML">Mentions légales</button>
       /
-      <button type="button" class="" data-toggle="modal" data-target=".bd-example-modal-lg">Déontologie</button>
+      <button type="button" class="" data-toggle="modal" data-target=".modalDeontology">Déontologie</button>
     </div>
 
     <div class="footer-copyright">
@@ -19,14 +19,36 @@
     <div class="footer-links d-flex flex-column align-items-start">
       <a href="https://www.facebook.com/IngridMeunierpsychotherapie/" target="_blank"><i class="fab fa-facebook"></i> <b>Facebook</b></a>
       <a href="https://www.linkedin.com/in/ingrid-meunier-67b76185/" target="_blank"><i class="fab fa-linkedin"></i> <b>LinkedIn</b></a>
-      <%= link_to "Mentions légales", legal_notice_path %>
-      <button type="button" class="" data-toggle="modal" data-target=".bd-example-modal-lg">Déontologie</button>
+      <button type="button" class="" data-toggle="modal" data-target=".modalML">Mentions légales</button>
+      <button type="button" class="" data-toggle="modal" data-target=".modalDeontology">Déontologie</button>
     </div>
   </div>
 </div>
 
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal modalML fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="emailModalLabel"><b>Déontologie</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render "shared/legal_notice" %>
+        <div class="w-100 text-center">
+          <button type="button" class="btn-red" data-dismiss="modal" aria-label="Close">
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal modalDeontology fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
