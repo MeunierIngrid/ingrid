@@ -192,7 +192,9 @@
 <!--         <div class="col-12">
           <%#= f.input :complement, label: "Complément d'information" %>
         </div> -->
-
+        <div class="col-12 text-center">
+          <%= recaptcha_tags %>
+        </div>
         <div class="text-center w-100">
           <%= f.button :submit, "Envoyer", class: "btn btn-red" %>
         </div>
