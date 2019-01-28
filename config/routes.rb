@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'books/:id/download-pdf', to: "books#download_pdf", as: 'book_download_pdf'
   get 'books/:book_id/free-order', to: "orders#free", as: 'free_order'
 
+  get '/surdoues', to: 'pages#home'
+
+
   resources :surveys, only: [:new, :create]
   get '/surveys/:token', to: "surveys#show", as: 'survey'
   resources :books, only: [:index, :show] do
