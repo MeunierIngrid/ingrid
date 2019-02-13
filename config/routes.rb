@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/biography', to: "pages#bio"
   get '/ressources', to: "pages#ressources"
-  get 'quizz-informations', to: 'pages#survey', as: 'quizz_informations'
+  get 'test-surdoues', to: 'pages#survey', as: 'quizz_informations'
   get '/surveys/session', to: "surveys#update_session", as: 'session_survey'
   get '/mentions-legales', to: "pages#legal_notice", as: 'legal_notice'
 

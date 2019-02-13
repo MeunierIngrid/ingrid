@@ -10,11 +10,18 @@
       <p>
       <div class="banner d-flex align-items-center flex-column">
         <%= image_tag "logo.png" %>
+        <h1>Adultes surdoués</h1>
         <p class="pushline">Be yourself : Il n'est jamais trop tard pour être soi même</p>
 
       </div>
       <p class="w-100">
-        Sur ce site vous trouverez un <strong>questionnaire</strong>, des <strong>e-books</strong> et mon expertise pour <strong>répondre à vos questions</strong>.
+        Sur ce site vous trouverez un
+        <strong><%= link_to "un test pour adulte surdoué", quizz_informations_path, style: "text-decoration: none;" %></strong>
+        , des
+        <strong><%= link_to "e-books sur la douance", books_path, style: "text-decoration: none;" %></strong>
+        et mon expertise pour
+        <strong><%= link_to "répondre à vos questions", new_contact_path, style: "text-decoration: none;" %></strong>
+        .
       </p>
       <p>
         Forte de mes <b>14 ans d'expérience dans l'accompagnement du haut potentiel</b> (bénévole et professionnelle) je souhaite mettre <b>mon expertise de psychothérapeute</b> à votre service.
@@ -125,14 +132,14 @@
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
     <div class="content py-5">
-      <h2>La démarche</h2>
+      <h2>Pourquoi Surdoué Décomplexé</h2>
 
       <p>
-        Pourquoi décomplexé? Car <b>être surdoué n'est ni honteux, ni une insulte, ni de l'orgueil mal placé</b>. Être surdoué est une <b>chance</b> quand on sait l'exploiter.
+        Car <b>être surdoué n'est ni honteux, ni une insulte, ni de l'orgueil mal placé</b>. Être surdoué est une <b>chance</b> quand on sait l'exploiter.
       </p>
 
       <p>
-        Quand on se pense ou se découvre surdoué, on a besoin de savoir <b>rapidement</b> ce qu'il en est. Se déclenche un fort sentiment d'empressement à comprendre, savoir et solutionner.
+        Quand on se pense ou se découvre surdoué, on a besoin de savoir <b>rapidement</b> ce qu'il en est. Se déclenche un fort sentiment d'empressement à <b>comprendre, savoir et solutionner.</b>
       </p>
       <p>
         Je vous mets à dispositions <b>3 manières possibles</b> d'y arriver, délivrant <b>3 types de services</b>.
@@ -237,7 +244,7 @@
 <div class="wrapper bg-marron-light text-center">
   <div class="container">
     <div class="content py-5">
-      <h2>L'accompagnement</h2>
+      <h2>L'accompagnement du haut potentiel</h2>
       <p><b>Être surdoué n'est ni une névrose, ni une pathologie. Il n'y a donc pas lieu d'engager une thérapie pour cela.</b></p>
 
       <div class="d-none d-md-block">
@@ -279,7 +286,7 @@
 <div class="wrapper text-center bg-marron-light">
   <div class="container">
     <div class="content py-5">
-      <h2>Ca me parle</h2>
+      <h2>Témoignages de surdoués</h2>
       <p>
         <b>Témoignages issus du livre de Audrey Bouquet
         "<%= link_to "À la rencontre de mes semblables à rayures", ressources_path(anchor: "audrey-bouquet") %>"
