@@ -12,7 +12,7 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     if @survey.save
-      SurveyMailer.result(@survey).deliver_now
+      #SurveyMailer.result(@survey).deliver_now
       redirect_to survey_path(@survey.token)
     else
       redirect_to new_survey_path
