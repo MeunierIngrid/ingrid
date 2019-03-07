@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
-  get '/biography', to: "pages#bio"
-  get '/ressources', to: "pages#ressources"
+  get '/specialiste-adultes-surdoues', to: "pages#bio"
+  get '/ressources-haut-potentiel', to: "pages#ressources"
   get 'test-surdoues', to: 'pages#survey', as: 'quizz_informations'
   get '/surveys/session', to: "surveys#update_session", as: 'session_survey'
   get '/mentions-legales', to: "pages#legal_notice", as: 'legal_notice'
@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :surveys, only: [:new, :create]
   get '/surveys/:token', to: "surveys#show", as: 'survey'
-  resources :books, only: [:index, :show] do
+  resources :books, as: 'ebook_surdoues', only: [:index, :show] do
     resources :orders, only: [:show, :create], shallow: true
   end
   resources :contacts, only: [:new, :create, :show]
