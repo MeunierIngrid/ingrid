@@ -1,7 +1,7 @@
 class Survey < ApplicationRecord
   has_secure_token
   belongs_to :user, optional: true
-  has_many :answers, inverse_of: :survey
+  has_many :answers, inverse_of: :survey, dependent: :destroy
   accepts_nested_attributes_for :answers,
                                 reject_if: proc { |attributes| attributes[:score].blank? },
                                 allow_destroy: true

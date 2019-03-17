@@ -1,6 +1,6 @@
 ActiveAdmin.register Survey do
 
-  actions :index, :show
+  actions :index, :show, :destroy
   index do
     selectable_column
     column :email

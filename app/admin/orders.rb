@@ -1,6 +1,6 @@
 ActiveAdmin.register Order do
 
-  actions :index, :show
+  actions :index, :show, :destroy
   permit_params :email,
                 :book,
                 :amount

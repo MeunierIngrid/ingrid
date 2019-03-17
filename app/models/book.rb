@@ -4,7 +4,7 @@ class Book < ApplicationRecord
   has_one_attached :cover
   has_one_attached :pdf
   monetize :price_cents
-  has_many :orders
+  has_many :orders, dependent: :destroy
   validates :title, presence: true
   validates :title, uniqueness: true
   before_create :add_slug
