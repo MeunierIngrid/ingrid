@@ -2,11 +2,17 @@
 
 
 <p>Bonjour :)</p>
-<p>Merci d'avoir téléchargé l'e-book intitulé « Et si j'étais surdoué ? ».
-Cet e-book est là pour vous guider dans vos démarches vers un éventuel diagnostic. J'espère qu'il vous y
-aidera :)</p>
-<p>Si vous n'avez pas encore passé le pré-test en ligne, je vous conseille vivement de le passer. Il vous donnera déjà une 1ere idée de votre possible haut potentiel.
-www.ingrid-meunier.fr/suis-je-concerné</p>
+<p>Merci d'avoir téléchargé l'e-book intitulé « <%= @book.title %> ».
+
+<% if @book.slug == "1" %>
+  Cet e-book est là pour vous guider dans vos démarches vers un éventuel diagnostic. J'espère qu'il vous y
+  aidera :)</p>
+  <p>Si vous n'avez pas encore passé le pré-test en ligne, je vous conseille vivement de le passer. Il vous donnera déjà une 1ere idée de votre possible haut potentiel.
+  www.ingrid-meunier.fr/suis-je-concerné</p>
+<% else %>
+  <p>J'espère que vous y trouverez tout ce que vous êtes venus chercher et même plus encore. Bonne lecture.</p>
+<% end %>
+
 
 <p>
   N'hésitez pas à me contacter via le formulaire de contact si vous avez <b>la moindre question</b> ou si vous souhaitez <b>un rendez-vous</b> :
