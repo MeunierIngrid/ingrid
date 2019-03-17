@@ -1,5 +1,5 @@
 <%#= link_to "avoir des infos sur test", quizz_informations_path %>
-<%#= link_to "La liste de mes livre", books_path %>
+<%#= link_to "La liste de mes livre", ebook_surdoues_path %>
 
 
 
@@ -18,7 +18,7 @@
         Sur ce site vous trouverez un
         <strong><%= link_to "un test pour adulte surdoué", quizz_informations_path, class: "text-dark" %></strong>
         , des
-        <strong><%= link_to "e-books sur la douance", books_path, class: "text-dark" %></strong>
+        <strong><%= link_to "e-books sur la douance", ebook_surdoues_path, class: "text-dark" %></strong>
         et mon expertise pour
         <strong><%= link_to "répondre à vos questions", new_contact_path, class: "text-dark" %></strong>
         .
@@ -62,7 +62,7 @@
               <h2>Je souhaite comprendre</h2>
               <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
               <br>
-              <%= link_to "Les ebooks", books_path, class: "btn-red" %>
+              <%= link_to "Les ebooks", ebook_surdoues_path, class: "btn-red" %>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@
           <%= image_tag "pictos2.png", class: "w-100 pb-4 pt-2", alt: "Je souhaite comprendre ma douance" %>
           <p>Vous trouverez ici des e-books sur le fonctionnement de la douance, avec des conseils et trucs et astuces</p>
           <br>
-          <%= link_to "Les ebooks", books_path, class: "btn-red" %>
+          <%= link_to "Les ebooks", ebook_surdoues_path, class: "btn-red" %>
         </div>
       </div>
 
@@ -289,7 +289,7 @@
       <h2>Témoignages de surdoués</h2>
       <p>
         <b>Témoignages issus du livre de Audrey Bouquet
-        "<%= link_to "À la rencontre de mes semblables à rayures", ressources_path(anchor: "audrey-bouquet") %>"
+        "<%= link_to "À la rencontre de mes semblables à rayures", ressources_haut_potentiel_path(anchor: "audrey-bouquet") %>"
         </b>
       </p>
 
