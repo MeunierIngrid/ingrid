@@ -17,7 +17,7 @@
         </div>
         <div class="text-center">
           <% if book.visible? %>
-            <%= link_to "Commander", book, class: "btn-red" %>
+            <%= link_to "Commander", ebook_surdoue_path(book), class: "btn-red" %>
           <% else %>
             <h3>Actuellement indisponible</h3>
           <% end %>
