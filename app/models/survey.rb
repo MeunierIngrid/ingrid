@@ -6,6 +6,7 @@ class Survey < ApplicationRecord
                                 reject_if: proc { |attributes| attributes[:score].blank? },
                                 allow_destroy: true
 
+  validates_format_of :email, with: Devise::email_regexp
   validates :email, presence: { message: "Email manquant" }
   validates :email, uniqueness: { message: "Email déjà existant" }
   validates :answers, length: { is: Question.visibles.count, message: "Test incomplet" }

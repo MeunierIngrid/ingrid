@@ -121,6 +121,7 @@
 
 <div class="wrapper bg-marron-light">
   <%= simple_form_for @contact do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence %>
     <div class="container">
       <div class="content py-5 text-center">
         <h2>Contact</h2>
