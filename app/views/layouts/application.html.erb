@@ -4,7 +4,7 @@
     <%= render "layouts/google_analytics" %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Surdoué adulte et décomplexé : Se découvrir, se comprendre et s’assumer</title>
+    <title>Surdoué adulte et décomplexé : <%= content_for?(:title) ? yield(:title) : 'Se découvrir, se comprendre et s’assumer' %></title>
 
     <%= favicon_link_tag 'logo-small.png' %>
 
